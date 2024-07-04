@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/icons/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/static/icons/fontawesome/css/solid.css">
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="/static/styles/navbar.css">
+    <link rel="stylesheet" href="/static/styles/footer.css">
+    {% block css %}
+    {% endblock %}
+
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="
+        {% if request.path == '/' %}home-header
+        {% elif request.path == '/menu/' %}menu-header
+        {% elif request.path == '/menu/main_menu/' %}menu-header-2
+        {% elif  request.path == '/about/' %}about-header
+        {% elif  request.path == '/contact/' %}contact-header 
+        {% endif %}">
+            <div class="{% if request.path == '/create/' %}navbar-register-login
+                        {% elif request.path == '/login/' %}navbar-register-login
+                        {% elif request.path == '/profile/' %}navbar-register-login
+                        {% elif request.path == '/profile/edit/' %}navbar-register-login
+                        {% else %}navbar{% endif %}">
+                {% include 'navbar.html' %}
+            </div>
+            <div class="{% if request.path == '/' %}no-header 
+            {% else %}pages-header
+            {% endif %}">
+                <h1>
+                    {% if request.path == '/menu/' %}Menu
+                    {% elif request.path == '/menu/main_menu/' %}Menu
+                    {% elif request.path == '/about/' %}About Us
+                    {% elif request.path == '/contact/' %}Contact Us
+                    {% endif %}
+                </h1>
+            </div>
+            {% block header %}
+
+            {% endblock %}
+ 
+        </div>
+        <div class="content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+        <div class="footer">
+            {% include 'footer.html' %}
+        </div>
+    </div>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.menu');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+
+        const dropdown_btn = document.querySelector('.dropdown');
+        const profile_menu = document.querySelector('.profile-menu');
+        dropdown_btn.addEventListener('click', () => {
+            profile_menu.classList.toggle('active');
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var messagesContainer = document.getElementById('messages-container');
+            if (messagesContainer) {
+                setTimeout(function() {
+                    messagesContainer.style.display = 'none';
+                }, 3000); // Скрывать сообщения через 5 секунд (5000 миллисекунд)
+            }
+        });
+    </script>
+</body>
+
+</html>

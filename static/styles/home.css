@@ -1,0 +1,102 @@
+.header-content {
+  width: 82%;
+  height: 100%;
+  margin: 0 auto;
+}
+.header-content .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.header-content .top .left {
+  margin: 100px 0;
+}
+.header-content .top .left .h2 {
+  font-size: 60px;
+  margin: 40px 0;
+  color: snow;
+}
+.header-content .top .left .p-silver {
+  margin: 25px 0;
+  width: 616px;
+  font-family: inter;
+  font-size: 15px;
+  color: #5e5e5e;
+}
+.header-content .top .left .buttons {
+  width: 338px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.header-content .top .left .buttons .main-menu {
+  background-color: #349705;
+  border: none;
+  margin: 0 5px;
+  text-decoration: none;
+  padding: 5px 15px;
+  font-size: 18px;
+  color: snow;
+}
+.header-content .top .left .buttons .seasonal-menu {
+  background-color: inherit;
+  margin: 0 5px;
+  text-decoration: none;
+  color: #349705;
+  padding: 5px 15px;
+  text-decoration: none;
+  border: 3px solid #349705;
+}
+.header-content .top .right {
+  width: 360px;
+  background-color: snow;
+  padding: 30px;
+  margin: 20px 0;
+}
+.header-content .top .right h6 {
+  color: #349705;
+  margin: 2px 0;
+}
+.header-content .top .right .form-control {
+  width: 100%;
+  border: solid 1px #ADB5BD;
+  padding: 10px;
+  font-size: 18px;
+}
+.header-content .top .right .form-control::-moz-placeholder {
+  color: #ADB5BD;
+}
+.header-content .top .right .form-control::placeholder {
+  color: #ADB5BD;
+}
+.header-content .top .right button {
+  width: 100%;
+  background-color: #349705;
+  border: none;
+  margin: 20px 0;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: snow;
+}
+.header-content .bottom {
+  height: 120px;
+  text-align: right;
+  color: #349705;
+  margin: 40px 0;
+}
+.header-content .bottom .p {
+  font-family: sans-serif;
+  color: snow;
+  font-size: 20px;
+}
+.header-content .bottom .phone-number {
+  font-family: "Fraunces", sans-serif;
+  text-decoration: none;
+  color: #349705;
+  font-size: 20px;
+  font-weight: 650;
+}
+.header-content .bottom p {
+  color: silver;
+  margin: 10px 0;
+}/*# sourceMappingURL=home.css.map */

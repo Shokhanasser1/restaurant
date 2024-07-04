@@ -1,0 +1,107 @@
+.header-content {
+  width: 82%;
+  height: 100%;
+  margin: 0 auto;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .left {
+      margin: 100px 0;
+
+      .h2 {
+        font-size: 60px;
+        margin: 40px 0;
+        color: snow;
+      }
+      .p-silver {
+        margin: 25px 0;
+        width: 616px;
+        font-family: inter;
+        font-size: 15px;
+        color: #5e5e5e;
+      }
+      .buttons {
+        width: 338px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .main-menu {
+          background-color: #349705;
+          border: none;
+          margin: 0 5px;
+          text-decoration: none;
+          padding: 5px 15px;
+          font-size: 18px;
+          color: snow;
+        }
+        .seasonal-menu {
+          background-color: inherit;
+          margin: 0 5px;
+          text-decoration: none;
+          color: #349705;
+          padding: 5px 15px;
+          text-decoration: none;
+          border: 3px solid #349705;
+        }
+      }
+    }
+
+    .right {
+      width: 360px;
+      background-color: snow; 
+      padding: 30px;
+      margin: 20px 0;
+
+      h6 {
+        color: #349705;
+        margin: 2px 0;
+      }
+      .form-control {
+        width: 100%;
+        border: solid 1px #ADB5BD;
+        padding: 10px;
+        font-size: 18px;
+
+        &::placeholder {
+          color: #ADB5BD;
+        }
+      }
+      button {
+        width: 100%;
+        background-color: #349705;
+        border: none;
+        margin: 20px 0;
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: snow;
+      }
+    }
+  }
+
+  .bottom {
+    height: 120px;
+    text-align: right;
+    color: #349705;
+    margin: 40px 0;
+    .p {
+      font-family: sans-serif;
+      color: snow;
+      font-size: 20px;
+    }
+    .phone-number {
+      font-family: "Fraunces", sans-serif;
+      text-decoration: none;
+      color: #349705;
+      font-size: 20px;
+      font-weight: 650;
+    }
+    p {
+      color: silver;
+      margin: 10px 0;
+    }
+  }
+}

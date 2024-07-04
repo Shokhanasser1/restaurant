@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="/static/styles/register_login.css">
+<link rel="stylesheet" href="/static/styles/profile.css">
+{% endblock %}
+
+{% block title %}
+Profile page
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <b>Профиль пользователя <span>{{ profile.user.username }}</span></b>
+    <a href="{% url 'edit_profile' %}">Редактировать профиль</a>
+    <p><strong>Name: </strong><span>{{profile.first_name}} {{profile.last_name}}</span></p>
+    <p><strong>Email: </strong><span>{{ profile.email }}</span></p>
+    <p><strong>О себе: </strong><span>{{ profile.bio }}</span></p>
+    
+</div>
+{% endblock %}

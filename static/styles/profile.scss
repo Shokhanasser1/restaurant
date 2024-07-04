@@ -1,0 +1,28 @@
+.profile-container {
+  width: 100%;
+  margin: 20px auto;
+  padding: 35px;
+  color: black;
+  border-radius: 10px;
+
+  b {
+      font-size: 35px;
+
+    }
+    span {
+      color: #349705;
+      font-family: "Fraunces", serif;
+    }
+    
+    p {
+        font-size: 20px;
+        margin: 15px 0;
+    }
+    a {
+        font-family: "Fraunces", serif;
+        text-decoration: none;
+        color: #349705;
+        font-weight: 700;
+        float: right;
+    }
+}

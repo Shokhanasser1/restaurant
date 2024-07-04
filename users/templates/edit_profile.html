@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/styles/register_login.css">
+<link rel="stylesheet" href="/static/styles/edit_profile.css">
+{% endblock %}
+
+{% block title %}
+edit profile page
+{% endblock %}
+
+
+{% block content %}
+<div class="edit-profile-container">
+    <h2>Редактирование профиля</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить изменения</button>
+    </form>
+</div>
+{% endblock %}

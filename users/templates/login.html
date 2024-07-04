@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/styles/register_login.css">
+{% endblock %}
+
+{% block title %}
+login page
+{% endblock %}
+
+
+{% block content %}
+<div class="form-container">
+
+    <h2>Вход</h2>
+    {% if messages %}
+    <span class="messages" id="messages-container">
+        {% for message in messages %}
+        <div class="{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+    </span>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Войти</button>
+        <a href="{% url 'create_user' %}">У вас нет аккаунта? Зарегистририруйтесь!</a>
+    </form>
+</div>
+{% endblock %}

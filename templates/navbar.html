@@ -1,0 +1,73 @@
+{% load static %}
+
+    <div class="navbar-left">
+        <a id="logoname" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="logo">restaurant</a>
+    </div>
+    <div class="navbar-right">
+        <nav class="nav-links">
+            {% if not request.user.is_authenticated %}
+            <a class="{% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+            <a class="{% if request.path == '/menu/' or request.path == '/menu/main_menu/' %}active{% endif %}" href="{% url 'menu' %}">Menu</a>
+            <a class="{% if request.path == '/about/' %}active{% endif %}" href="{% url 'about' %}">About us</a>
+            <a class="{% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact us</a>
+            <a href="{% url 'create_user' %}"><i class="fa-solid fa-right-to-bracket" style="font-size: 25px;"></i></a>
+            {% else %}
+            <a class="{% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+            <a class="{% if request.path == '/menu/' or request.path == '/menu/main_menu/' %}active{% endif %}" href="{% url 'menu' %}">Menu</a>
+            <a class="{% if request.path == '/about/' %}active{% endif %}" href="{% url 'about' %}">About us</a>
+            <a class="{% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact us</a>
+            <button class="dropdown"><i class="fa fa-user"></i></button>
+            {% endif %}
+        </nav> 
+    </div>
+    <div class="profile-menu">
+        <div class="profile-item">
+            <a href="{% url 'profile' %}">Profile</a>            
+        </div>
+        <div class="profile-item">
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+    <div class="menu">
+        {% if not request.user.is_authenticated %}
+        <div class="nav-item">
+            <a class="{% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+        </div>
+        <div class="nav-item">
+            <a class="{% if request.path == '/menu/' %}active{% endif %}" href="{% url 'menu' %}">Menu</a>
+        </div>
+        <div class="nav-item">
+            <a class="{% if request.path == '/about/' %}active{% endif %}" href="{% url 'about' %}">About us</a>
+        </div>
+        <div class="nav-item">
+            <a class="{% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact us</a>
+        </div>
+        <div class="nav-item">
+            <a href="{% url 'create_user' %}"><i class="fa-solid fa-right-to-bracket" style="font-size: 25px;"></i></a>
+        </div>
+        {% else %}
+        <div class="nav-item">
+            <a class="{% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+        </div>
+        <div class="nav-item">
+            <a class="{% if request.path == '/menu/' or request.path == '/menu/main_menu/' %}active{% endif %}" href="{% url 'menu' %}">Menu</a>
+        </div>
+        <div class="nav-item">
+            <a class="{% if request.path == '/about/' %}active{% endif %}" href="{% url 'about' %}">About us</a>
+        </div>
+        <div class="nav-item">
+            <a class="{% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact us</a>
+        </div>
+        <div class="nav-item">
+            <a href="{% url 'profile' %}"><i class="fa fa-user"></i></a>
+        </div>
+        <div class="nav-item">
+            <a href="{% url 'menu' %}"><i class="fa-solid fa-right-to-bracket" style="font-size: 25px;"></i></a>
+        </div>
+        {% endif %}
+    </div>
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>

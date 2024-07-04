@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/styles/home.css">
+{% endblock %}
+
+{% block title %}
+Home page
+{% endblock %} 
+
+{% block header %}
+<div class="header-content">
+    <div class="top">
+        <div class="left">
+            <p class="h2">Best place to find your food love</p>
+            <p class="p-silver">Vel ullamcorper ultrices volutpat enim dignissim id purus. Urna quam massa urna dolor
+                enim dui lectus idristique dignissim pharetra</p>
+                <div class="buttons">
+                    <a href="{% url 'main_menu' %}" class="main-menu">Main menu</a>
+                    <a href="{% url 'menu' %}" class="seasonal-menu">Seasonal menu</a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="reservation_container">
+                    {% include 'create_reservation.html' %}
+                </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <p class="p">Book a table by phone <a class="phone-number" href="tel: +998915503151">+998 (91) 550-31-51</a></p>
+        <p>Vel ullamcorper ultrices volutpat enim dignissim id purus.</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+Main content
+{% endblock %}

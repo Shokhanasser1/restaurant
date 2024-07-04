@@ -1,0 +1,25 @@
+.profile-container {
+  width: 100%;
+  margin: 20px auto;
+  padding: 35px;
+  color: black;
+  border-radius: 10px;
+}
+.profile-container b {
+  font-size: 35px;
+}
+.profile-container span {
+  color: #349705;
+  font-family: "Fraunces", serif;
+}
+.profile-container p {
+  font-size: 20px;
+  margin: 15px 0;
+}
+.profile-container a {
+  font-family: "Fraunces", serif;
+  text-decoration: none;
+  color: #349705;
+  font-weight: 700;
+  float: right;
+}/*# sourceMappingURL=profile.css.map */
