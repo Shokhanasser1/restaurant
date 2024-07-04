@@ -7,11 +7,13 @@ urlpatterns = [
     path("login/", login_view, name="login"),
     path("logout/", logout_view, name="logout"),
     
+    path('', views.home, name='home'),
     path('', include('users.urls')),
 
     path('create_reservation/', views.create_reservation, name='create_reservation'),
     path('reservations/', views.reservation_list, name='reservation_list'),
-    path('', views.home, name='home'),
+    path('reservation/<int:reservation_id>/delete/', views.reservation_delete, name='reservation_delete'),
+    
     path('menu/', include('menu.menu_urls')),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),

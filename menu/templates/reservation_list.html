@@ -2,10 +2,7 @@
 {% load static %}
 
 {% block title %}
-Reservation list page
-{% endblock %}
-
-{% block header %}
+My reservations page
 {% endblock %}
 
 {% block content %}
@@ -13,6 +10,7 @@ Reservation list page
 <ul>
     {% for reservation in reservations %}
         <li>{{ reservation.name }} on {{ reservation.date }} at {{ reservation.time }} for {{ reservation.persons_number }} people</li>
+        <li><a href="{% url 'reservation_delete' reservation.id%}">Delete reservation</a></li>
     {% endfor %}
 </ul>
 {% endblock %}

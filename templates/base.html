@@ -27,11 +27,14 @@
         {% elif request.path == '/menu/main_menu/' %}menu-header-2
         {% elif  request.path == '/about/' %}about-header
         {% elif  request.path == '/contact/' %}contact-header 
+        {% elif  request.path == '/reservations/' %}reservation-nav 
         {% endif %}">
             <div class="{% if request.path == '/create/' %}navbar-register-login
                         {% elif request.path == '/login/' %}navbar-register-login
                         {% elif request.path == '/profile/' %}navbar-register-login
                         {% elif request.path == '/profile/edit/' %}navbar-register-login
+
+
                         {% else %}navbar{% endif %}">
                 {% include 'navbar.html' %}
             </div>
@@ -49,7 +52,7 @@
             {% block header %}
 
             {% endblock %}
- 
+
         </div>
         <div class="content">
             {% block content %}
@@ -77,10 +80,10 @@
         });
 
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var messagesContainer = document.getElementById('messages-container');
             if (messagesContainer) {
-                setTimeout(function() {
+                setTimeout(function () {
                     messagesContainer.style.display = 'none';
                 }, 3000); // Скрывать сообщения через 5 секунд (5000 миллисекунд)
             }

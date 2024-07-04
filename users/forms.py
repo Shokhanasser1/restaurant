@@ -101,17 +101,7 @@ class ProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['first_name', 'last_name', 'bio', 'email']
+        fields = ['user', 'bio']
     
-class ProfileEditForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ['first_name', 'last_name', 'bio', 'email']
-        
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in self.fields.values():
-            field.required = False
-            
 
     

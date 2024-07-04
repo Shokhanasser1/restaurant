@@ -34,7 +34,6 @@ def login_view(request):
             user = authenticate(request, username=username_or_email, password=password)
 
             if user is None:
-                # Попробуем аутентификацию по email
                 try:
                     user_obj = User.objects.get(email=username_or_email)
                     user = authenticate(request, username=user_obj.username, password=password)
@@ -46,7 +45,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, 'Вы успешно вошли в систему.')
-                return redirect('home')  # Перенаправление на главную страницу
+                return redirect('home')
             else:
                 messages.error(request, 'Неверное имя пользователя, email или пароль.')
     else:
@@ -74,17 +73,16 @@ def profile_page(request, author_id: int = None):
 
 @login_required
 def edit_profile(request):
-    profile = request.user.profile
+    profile = Profile.objects.get(user=request.user)  
     if request.method == 'POST':
-        form = ProfileEditForm(request.POST, instance=profile)
+        form = ProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Профиль обновлен успешно!')
-            return redirect('profile')
+            return redirect('profile')  
         else:
             messages.error(request, 'Пожалуйста, исправьте ошибки в форме.')
     else:
-        form = ProfileEditForm(instance=profile)
+        form = ProfileForm(instance=profile)
         
     return render(request, 'edit_profile.html', {'form': form})
-
