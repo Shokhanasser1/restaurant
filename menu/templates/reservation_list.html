@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block css %}
+<link rel="stylesheet" href="/static/styles/reservation.css">
+{% endblock %}
 
 {% block title %}
 My reservations page
 {% endblock %}
 
 {% block content %}
-<h2>My Reservations</h2>
-<ul>
-    {% for reservation in reservations %}
-        <li>{{ reservation.name }} on {{ reservation.date }} at {{ reservation.time }} for {{ reservation.persons_number }} people</li>
-        <li><a href="{% url 'reservation_delete' reservation.id%}">Delete reservation</a></li>
-    {% endfor %}
-</ul>
+<div class="reservations-container">
+    <h2>My Reservations</h2>
+    <ul>
+        {% for reservation in reservations %}
+        <li><b>{{ reservation.name }}</b> on {{ reservation.date }} at {{ reservation.time }} for {{ reservation.persons_number }} people
+        <a href="{% url 'reservation_delete' reservation.id%}">Delete reservation</a></li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

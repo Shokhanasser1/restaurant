@@ -1,0 +1,8 @@
+<h1>{{ dish.name }}</h1>
+<p>Price: {{ dish.price }}</p>
+{% if dish.image %}
+    <img src="{{ dish.image.url }}" alt="{{ dish.name }}">
+    <a href="{% url 'dish_delete' dish.id%}">Delete dish</a>
+{% else %}
+    <p>No image available</p>
+{% endif %}

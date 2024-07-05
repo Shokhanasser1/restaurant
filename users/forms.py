@@ -89,19 +89,9 @@ class LoginForm(forms.Form):
         
         
 class ProfileForm(forms.ModelForm):
-    first_name = forms.CharField(label='First name', max_length=100, required=False,
-                            widget=forms.TextInput(
-                            attrs={'class': 'form-control', "placeholder": "First name"}))
-    last_name = forms.CharField(label='Last name', max_length=100, required=False,
-                            widget=forms.TextInput(
-                                attrs={'class': 'form-control', "placeholder": "Last name"}))
-
-
-
-
     class Meta:
         model = Profile
-        fields = ['user', 'bio']
+        fields = ['bio']
     
 
     

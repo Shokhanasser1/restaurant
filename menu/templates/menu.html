@@ -12,5 +12,8 @@ Menu page
 {% endblock %}
 
 {% block content %}
-Main content
+<a href="{% url 'add_dish' %}">Add Dish</a>
+<div class="dishes-container">
+    {% include 'dishes.html' %}
+</div>
 {% endblock %}

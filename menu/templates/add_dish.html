@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Add dish page
+{% endblock %}
+
+{% block content %}
+<h1>Add a New Dish</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Dish</button>
+</form>
+{% endblock %}

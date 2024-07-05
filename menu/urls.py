@@ -15,6 +15,7 @@ urlpatterns = [
     path('reservation/<int:reservation_id>/delete/', views.reservation_delete, name='reservation_delete'),
     
     path('menu/', include('menu.menu_urls')),
+
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
 ]

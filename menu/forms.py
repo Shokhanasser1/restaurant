@@ -1,5 +1,5 @@
 from django import forms
-from .models import Reservation
+from .models import Reservation, Dish
 
 class ReservationForm(forms.ModelForm):
     class Meta:
@@ -18,3 +18,10 @@ class ReservationForm(forms.ModelForm):
         super(ReservationForm, self).__init__(*args, **kwargs)
         if user:
             self.fields['name'].initial = user.username
+
+
+class DishForm(forms.ModelForm):
+    class Meta:
+        model = Dish
+        fields = ['name', 'price', 'image']
+        

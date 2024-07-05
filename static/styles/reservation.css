@@ -1,0 +1,32 @@
+.reservations-container {
+  width: 85%;
+  margin: 50px auto;
+  height: 60vh;
+}
+.reservations-container h2 {
+  text-align: center;
+}
+.reservations-container ul {
+  list-style-type: decimal;
+  margin: 10px;
+  padding: 0;
+  font-family: "Fraunces", serif;
+}
+.reservations-container ul li {
+  margin: 30px 0;
+  font-size: 20px;
+}
+.reservations-container ul li b {
+  font-size: 23px;
+}
+.reservations-container ul li a {
+  float: right;
+  text-decoration: none;
+  color: #349705;
+}
+.reservations-container ul li a:hover {
+  font-weight: bold;
+}
+.reservations-container ul li::before {
+  color: #349705;
+}/*# sourceMappingURL=reservation.css.map */

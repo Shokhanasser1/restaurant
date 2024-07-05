@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import ReservationForm
-from .models import Reservation
+from .forms import ReservationForm, DishForm
+from .models import Reservation, Dish
 
 @login_required
 def create_reservation(request):
@@ -41,12 +41,34 @@ def reservation_delete(request, reservation_id):
     }
     return render(request, 'reservation_delete.html', context)
 
+
+def add_dish(request):
+    if request.method == 'POST':
+        form = DishForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('menu')
+    else:
+        form = DishForm()
+    return render(request, 'add_dish.html', {'form': form})
+
+def dish_detail(request, dish_id):
+    dish = get_object_or_404(Dish, id=dish_id)
+    return render(request, 'dish_detail.html', {'dish': dish})
+
+
+def dish_delete(request, dish_id):
+    dish = get_object_or_404(Dish, id=dish_id)
+    dish.delete()
+    return redirect('menu')
+
 def home(request):
     form = ReservationForm(user=request.user if request.user.is_authenticated else None)
     return render(request, 'home.html', {'form': form})
 
 def menu(request):
-    return render(request,'menu.html')
+    dishes = Dish.objects.all()
+    return render(request,'menu.html', {'dishes': dishes})
 
 def main_menu(request):
     return render(request,'main menu.html')
