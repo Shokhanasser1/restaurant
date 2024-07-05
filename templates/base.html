@@ -25,11 +25,11 @@
         {% if request.path == '/' %}home-header
         {% elif request.path == '/menu/' %}menu-header
         {% elif request.path == '/menu/add_dish/' %}menu-header
-        {% elif request.path == '/menu/dishes/' %}menu-header
         {% elif request.path == '/menu/main_menu/' %}menu-header-2
         {% elif  request.path == '/about/' %}about-header
         {% elif  request.path == '/contact/' %}contact-header 
         {% elif  request.path == '/reservations/' %}reservation-nav 
+        {% else %}menu-header
         {% endif %}">
             <div class="{% if request.path == '/create/' %}navbar-register-login
                         {% elif request.path == '/login/' %}navbar-register-login

@@ -1,15 +1,24 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block css %}
+<link rel="stylesheet" href="/static/styles/menu.css">
+{% endblock %}
+
 {% block title %}
 Add dish page
 {% endblock %}
 
 {% block content %}
-<h1>Add a New Dish</h1>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Add Dish</button>
-</form>
+<div class="form-container">
+    <div class="header">
+        <h2>Add a New Dish</h2>
+        <a href="{% url 'menu' %}">Go back</a>
+    </div>
+     <form method="post" enctype="multipart/form-data">
+         {% csrf_token %}
+         {{ form.as_p }}
+         <button type="submit">Add Dish</button>
+        </form>
+    </div>
 {% endblock %}

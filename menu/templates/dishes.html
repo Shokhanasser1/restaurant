@@ -1,11 +1,15 @@
-    <h2>Dishes</h2><a href="{% url 'add_dish' %}">add dish</a>
-    <ul>
-        {% for dish in dishes %}
-        <li>
-        <img src="{{ dish.image.url }}" alt="{{ dish.name }}" style="width: 30px; height: 30px;"> <br>
-            <a href="{% url 'dish_detail' dish.id %}">{{ dish.name }}</a>
-            {{ dish.price }}
-            <a href="{% url 'dish_delete' dish.id%}">Delete dish</a>
-        </li>
-        {% endfor %}
-    </ul>
+
+<div class="header">
+    <h2>Dishes</h2>
+    <a href="{% url 'add_dish' %}">add a new dish</a>
+</div>
+<ul>
+
+    {% for dish in dishes %}
+    <li>
+        <img src="{{ dish.image.url }}" alt="{{ dish.name }}"> <br>
+        <a href="{% url 'dish_detail' dish.id %}">{{ dish.name }} </a> <b>--- {{ dish.price }} ---</b>
+        <a href="{% url 'dish_delete' dish.id%}">Delete dish</a>
+    </li>
+    {% endfor %}
+</ul>
