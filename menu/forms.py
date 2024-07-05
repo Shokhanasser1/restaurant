@@ -1,5 +1,6 @@
 from django import forms
 from .models import Reservation, Dish
+from PIL import Image
 
 class ReservationForm(forms.ModelForm):
     class Meta:
@@ -23,5 +24,13 @@ class ReservationForm(forms.ModelForm):
 class DishForm(forms.ModelForm):
     class Meta:
         model = Dish
-        fields = ['name', 'price', 'image']
+        fields = ['name', 'price', 'image', 'description']
+        
+    def clean_image(self):
+        image = self.cleaned_data.get('image')
+        if image:
+            img = Image.open(image)
+            if img.width <= 330 or img.height <= 300:
+                raise forms.ValidationError("Размер изображения должен быть 330x300 пикселей")
+        return image
         
