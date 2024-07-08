@@ -1,7 +1,9 @@
 
 <div class="header">
     <h2>Dishes</h2>
+    {% if request.user.is_authenticated %}
     <a href="{% url 'add_dish' %}">add a new dish</a>
+    {% endif %}
 </div>
 <ul>
 

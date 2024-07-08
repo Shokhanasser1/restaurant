@@ -41,7 +41,7 @@ def reservation_delete(request, reservation_id):
     }
     return render(request, 'reservation_delete.html', context)
 
-
+@login_required
 def add_dish(request):
     if request.method == 'POST':
         form = DishForm(request.POST, request.FILES)
