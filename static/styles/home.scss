@@ -105,3 +105,40 @@
     }
   }
 }
+
+.home-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+
+  .restaurant-styling-name {
+    width: 200px;
+    max-height: 20px;
+    font-size: 20px;
+    color: #349705;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+
+
+    span {
+      background-color: snow;
+      padding: 0 5px;
+    }
+
+    hr {
+      z-index: -1;
+      width: 100%;
+      top: 50%;
+      height: 3px;
+      position: absolute;
+      left: 0;
+      background-color: #349705;
+      border: none;
+    }
+
+  }
+}

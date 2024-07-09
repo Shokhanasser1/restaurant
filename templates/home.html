@@ -20,7 +20,7 @@ Home page
                     <a href="{% url 'main_menu' %}" class="main-menu">Main menu</a>
                     <a href="{% url 'menu' %}" class="seasonal-menu">Seasonal menu</a>
                 </div>
-            </div>
+            </div> 
             <div class="right">
                 <div class="reservation_container">
                     {% include 'create_reservation.html' %}
@@ -28,12 +28,14 @@ Home page
         </div>
     </div>
     <div class="bottom">
-        <p class="p">Book a table by phone <a class="phone-number" href="tel: +998915503151">+998 (91) 550-31-51</a></p>
+        <p class="p">Book a table by phone <a class="phone-number" href="tel: 5258470411">(525) 847-0411</a></p>
         <p>Vel ullamcorper ultrices volutpat enim dignissim id purus.</p>
     </div>
 </div>
 {% endblock %}
 
 {% block content %}
-Main content
+<div class="home-container">
+    <div class="restaurant-styling-name"><hr><span>RESTAURANT</span></div>
+</div>
 {% endblock %}
