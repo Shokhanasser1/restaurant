@@ -1,0 +1,6 @@
+  <h1>Popular Dishes</h1>
+  <ul>
+    {% for dish in popular_dishes %}
+      <li>{{ dish.dish__name }} - Ordered {{ dish.total_orders }} times</li>
+    {% endfor %}
+  </ul>

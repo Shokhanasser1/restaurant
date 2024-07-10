@@ -7,7 +7,7 @@
 
 {% block title %}
 Home page
-{% endblock %} 
+{% endblock %}
 
 {% block header %}
 <div class="header-content">
@@ -16,15 +16,15 @@ Home page
             <p class="h2">Best place to find your food love</p>
             <p class="p-silver">Vel ullamcorper ultrices volutpat enim dignissim id purus. Urna quam massa urna dolor
                 enim dui lectus idristique dignissim pharetra</p>
-                <div class="buttons">
-                    <a href="{% url 'main_menu' %}" class="main-menu">Main menu</a>
-                    <a href="{% url 'menu' %}" class="seasonal-menu">Seasonal menu</a>
-                </div>
-            </div> 
-            <div class="right">
-                <div class="reservation_container">
-                    {% include 'create_reservation.html' %}
-                </div>
+            <div class="buttons">
+                <a href="{% url 'main_menu' %}" class="main-menu">Main menu</a>
+                <a href="{% url 'menu' %}" class="seasonal-menu">Seasonal menu</a>
+            </div>
+        </div>
+        <div class="right">
+            <div class="reservation_container">
+                {% include 'create_reservation.html' %}
+            </div>
         </div>
     </div>
     <div class="bottom">
@@ -36,6 +36,53 @@ Home page
 
 {% block content %}
 <div class="home-container">
-    <div class="restaurant-styling-name"><hr><span>RESTAURANT</span></div>
+    <div class="header-name-context">
+        <div class="restaurant-styling-name">
+            <hr>
+            <span>RESTAURANT</span>
+        </div>
+        <h1>Explore our splendid menu</h1>
+    </div>
+    <div class="menu-cards">
+        <div  class="menu-card-1">
+            <h3>First Category</h3>
+            <a class="view-menu-btn" href="#">View menu</a>
+        </div>
+        <div  class="menu-card-2">
+            <h3>Second Category</h3>
+            <a class="view-menu-btn" href="#">View menu</a>
+        </div>
+        <div  class="menu-card-3">
+            <h3>Third Category</h3>
+            <a class="view-menu-btn" href="#">View menu</a>
+        </div>
+        <div  class="menu-card-4">
+            <h3>Fourth Category</h3>
+            <a class="view-menu-btn" href="#">View menu</a>
+        </div>
+    </div>
+
+    <div class="header-name-context">
+        <div class="restaurant-styling-name">
+            <hr>
+            <span>RESTAURANT</span>
+        </div>
+        <h1>Most popular sushi meals</h1>
+    </div>
+    <a href="{% url 'popular_dishes' %}">POPULAR</a>
+    <div class="popular-sushi-meals">
+        <div class="left">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="right">
+            <div></div>
+        </div>
+    </div>
+
+
+
+
+
 </div>
 {% endblock %}

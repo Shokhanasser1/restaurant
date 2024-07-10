@@ -58,15 +58,15 @@
 }
 .header-content .top .right .form-control {
   width: 100%;
-  border: solid 1px #ADB5BD;
+  border: solid 1px #adb5bd;
   padding: 10px;
   font-size: 18px;
 }
 .header-content .top .right .form-control::-moz-placeholder {
-  color: #ADB5BD;
+  color: #adb5bd;
 }
 .header-content .top .right .form-control::placeholder {
-  color: #ADB5BD;
+  color: #adb5bd;
 }
 .header-content .top .right button {
   width: 100%;
@@ -103,12 +103,14 @@
 
 .home-container {
   text-align: center;
+}
+.home-container .header-name-context {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
-.home-container .restaurant-styling-name {
+.home-container .header-name-context .restaurant-styling-name {
   width: 200px;
   max-height: 20px;
   font-size: 20px;
@@ -117,11 +119,11 @@
   z-index: 1;
   text-align: center;
 }
-.home-container .restaurant-styling-name span {
+.home-container .header-name-context .restaurant-styling-name span {
   background-color: snow;
   padding: 0 5px;
 }
-.home-container .restaurant-styling-name hr {
+.home-container .header-name-context .restaurant-styling-name hr {
   z-index: -1;
   width: 100%;
   top: 50%;
@@ -130,4 +132,81 @@
   left: 0;
   background-color: #349705;
   border: none;
+}
+.home-container .header-name-context h1 {
+  font-size: 50px;
+}
+.home-container .menu-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 80px;
+  margin-bottom: 160px;
+  color: snow;
+}
+.home-container .menu-cards h3 {
+  font-size: 28px;
+  margin-bottom: 60px;
+}
+.home-container .menu-cards .view-menu-btn {
+  padding: 10px 30px;
+  text-decoration: none;
+  color: snow;
+  background-color: #349705;
+}
+.home-container .menu-cards .menu-card-1 {
+  background: url("/static/images/menu-card-1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.512);
+  height: 420px;
+  padding: 250px 0 0 0;
+}
+.home-container .menu-cards .menu-card-2 {
+  background: url("/static/images/menu-card-2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.512);
+  height: 420px;
+  padding: 250px 0 0 0;
+}
+.home-container .menu-cards .menu-card-3 {
+  background: url("/static/images/menu-card-3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.512);
+  height: 420px;
+  padding: 250px 0 0 0;
+}
+.home-container .menu-cards .menu-card-4 {
+  background: url("/static/images/menu-card-4.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.512);
+  height: 420px;
+  padding: 250px 0 0 0;
+}
+.home-container .popular-sushi-meals {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #333;
+  height: 500px;
+}
+.home-container .popular-sushi-meals .left div {
+  height: 250px;
+  margin: 5px;
+  background-color: lightgray;
+}
+.home-container .popular-sushi-meals .right div {
+  margin: 5px;
+  height: 500px;
+  background-color: lightgray;
 }/*# sourceMappingURL=home.css.map */

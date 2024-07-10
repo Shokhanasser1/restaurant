@@ -1,5 +1,5 @@
 from django import forms
-from .models import Reservation, Dish
+from .models import Reservation, Dish, Order
 from PIL import Image
 
 class ReservationForm(forms.ModelForm):
@@ -34,3 +34,8 @@ class DishForm(forms.ModelForm):
                 raise forms.ValidationError("Размер изображения должен быть 330x300 пикселей")
         return image
         
+        
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ('quantity',)

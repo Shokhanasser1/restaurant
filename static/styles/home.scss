@@ -51,7 +51,7 @@
 
     .right {
       width: 360px;
-      background-color: snow; 
+      background-color: snow;
       padding: 30px;
       margin: 20px 0;
 
@@ -61,12 +61,12 @@
       }
       .form-control {
         width: 100%;
-        border: solid 1px #ADB5BD;
+        border: solid 1px #adb5bd;
         padding: 10px;
         font-size: 18px;
 
         &::placeholder {
-          color: #ADB5BD;
+          color: #adb5bd;
         }
       }
       button {
@@ -108,37 +108,127 @@
 
 .home-container {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 
+  .header-name-context {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
-  .restaurant-styling-name {
-    width: 200px;
-    max-height: 20px;
-    font-size: 20px;
-    color: #349705;
-    position: relative;
-    z-index: 1;
-    text-align: center;
+    .restaurant-styling-name {
+      width: 200px;
+      max-height: 20px;
+      font-size: 20px;
+      color: #349705;
+      position: relative;
+      z-index: 1;
+      text-align: center;
 
+      span {
+        background-color: snow;
+        padding: 0 5px;
+      }
 
-    span {
-      background-color: snow;
-      padding: 0 5px;
+      hr {
+        z-index: -1;
+        width: 100%;
+        top: 50%;
+        height: 3px;
+        position: absolute;
+        left: 0;
+        background-color: #349705;
+        border: none;
+      }
     }
+    h1 {
+      font-size: 50px;
+    }
+  }
 
-    hr {
-      z-index: -1;
-      width: 100%;
-      top: 50%;
-      height: 3px;
-      position: absolute;
-      left: 0;
+  .menu-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 80px;
+    margin-bottom: 160px;
+    color: snow;
+    
+    h3 {
+      font-size: 28px;
+      margin-bottom: 60px;
+    }
+    .view-menu-btn {
+      padding: 10px 30px;
+      text-decoration: none;
+      color: snow;
       background-color: #349705;
-      border: none;
     }
 
+
+    .menu-card-1 {
+      background: url("/static/images/menu-card-1.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: darken;
+      background-color: rgba(0, 0, 0, 0.512);
+      height: 420px;
+      padding: 250px 0 0 0;
+    }
+    .menu-card-2 {
+      background: url("/static/images/menu-card-2.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: darken;
+      background-color: rgba(0, 0, 0, 0.512);
+      height: 420px;
+      padding: 250px 0 0 0;
+    }
+    .menu-card-3 {
+      background: url("/static/images/menu-card-3.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: darken;
+      background-color: rgba(0, 0, 0, 0.512);
+      height: 420px;
+      padding: 250px 0 0 0;
+    }
+    .menu-card-4 {
+      background: url("/static/images/menu-card-4.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: darken;
+      background-color: rgba(0, 0, 0, 0.512);
+      height: 420px;
+      padding: 250px 0 0 0;
+    }
+  }
+
+  .popular-sushi-meals {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #333;
+    height: 500px;
+
+    .left {
+
+      div {
+        height: 250px;
+        margin: 5px;
+        background-color: lightgray;
+      }
+    }
+    .right {
+
+
+      div {
+        margin: 5px;
+        height: 500px;
+        background-color: lightgray;
+      }
+    }
   }
 }

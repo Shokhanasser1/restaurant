@@ -97,18 +97,34 @@
     width: 90%;
     margin: 40px auto;
 
+    .links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        a {
+            margin-top: 10px;
+            text-decoration: none;
+            color: #349705;
+
+
+            &:hover {
+                transform: scale(1.4);
+            }
+        }
+
+        .delete {
+            margin: 0;
+            padding: 0;
+            margin-right: 40px;
+        }
+        .order {
+            color: snow;
+            background-color: #349705;
+            padding: 10px 20px;
+        }
+    }
     
-    a {
-        margin-top: 10px;
-        text-decoration: none;
-        color: #349705;
-    }
-    .delete {
-        float: right;
-        margin: 0;
-        padding: 0;
-        margin-right: 40px;
-    }
     .dish {
         display: grid;
         grid-template-columns: 1fr 2fr;

@@ -89,16 +89,28 @@
   width: 90%;
   margin: 40px auto;
 }
-.dish-detail-container a {
+.dish-detail-container .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dish-detail-container .links a {
   margin-top: 10px;
   text-decoration: none;
   color: #349705;
 }
-.dish-detail-container .delete {
-  float: right;
+.dish-detail-container .links a:hover {
+  transform: scale(1.4);
+}
+.dish-detail-container .links .delete {
   margin: 0;
   padding: 0;
   margin-right: 40px;
+}
+.dish-detail-container .links .order {
+  color: snow;
+  background-color: #349705;
+  padding: 10px 20px;
 }
 .dish-detail-container .dish {
   display: grid;

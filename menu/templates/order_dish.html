@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="/static/styles/">
+{% endblock %}
+
+{% block title %}
+order page
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="order-container">
+    <h1>Order {{ dish.name }}</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Order</button>
+    </form>
+</div>
+{% endblock %}

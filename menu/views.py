@@ -1,8 +1,34 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import ReservationForm, DishForm
-from .models import Reservation, Dish
+from .forms import ReservationForm, DishForm, OrderForm
+from .models import Reservation, Dish, Order
+from django.db.models import Count
+
+
+def order_dish(request, dish_id):
+    dish = get_object_or_404(Dish, id=dish_id)
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order = form.save(commit=False)
+            order.dish = dish
+            order.user = request.user
+            order.save()
+            return redirect('menu')
+    else:
+        form = OrderForm()
+    return render(request, 'order_dish.html', {'dish': dish, 'form': form})
+
+def popular_dishes(request):
+    popular_dishes = Order.objects.values('dish__name').annotate(total_orders=Count('dish')).order_by('-total_orders')[:10]
+    return render(request, 'popular_dishes.html', {'popular_dishes': popular_dishes}) 
+
+
+def user_orders_list(request):
+        orders = Order.objects.filter(user=request.user)
+        return render(request, 'orders.html', {'orders': orders})
+
 
 @login_required
 def create_reservation(request):

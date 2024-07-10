@@ -14,6 +14,10 @@ urlpatterns = [
     path('reservations/', views.reservation_list, name='reservation_list'),
     path('reservation/<int:reservation_id>/delete/', views.reservation_delete, name='reservation_delete'),
     
+    path('order/<int:dish_id>/', views.order_dish, name='order_dish'),
+    path('popular/', views.popular_dishes, name='popular_dishes'),
+    
+    
     path('menu/', include('menu.menu_urls')),
 
     path('about/', views.about, name='about'),
