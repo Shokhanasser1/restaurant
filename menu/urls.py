@@ -16,6 +16,7 @@ urlpatterns = [
     
     path('order/<int:dish_id>/', views.order_dish, name='order_dish'),
     path('popular/', views.popular_dishes, name='popular_dishes'),
+    path('my_orders/', views.user_orders_list, name='user_orders_list'),
     
     
     path('menu/', include('menu.menu_urls')),

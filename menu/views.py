@@ -5,7 +5,7 @@ from .forms import ReservationForm, DishForm, OrderForm
 from .models import Reservation, Dish, Order
 from django.db.models import Count
 
-
+@login_required
 def order_dish(request, dish_id):
     dish = get_object_or_404(Dish, id=dish_id)
     if request.method == 'POST':
@@ -24,7 +24,7 @@ def popular_dishes(request):
     popular_dishes = Order.objects.values('dish__name').annotate(total_orders=Count('dish')).order_by('-total_orders')[:10]
     return render(request, 'popular_dishes.html', {'popular_dishes': popular_dishes}) 
 
-
+@login_required
 def user_orders_list(request):
         orders = Order.objects.filter(user=request.user)
         return render(request, 'orders.html', {'orders': orders})
@@ -82,7 +82,7 @@ def dish_detail(request, dish_id):
     dish = get_object_or_404(Dish, id=dish_id)
     return render(request, 'dish_detail.html', {'dish': dish})
 
-
+@login_required
 def dish_delete(request, dish_id):
     dish = get_object_or_404(Dish, id=dish_id)
     dish.delete()
