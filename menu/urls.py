@@ -7,6 +7,7 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 
 router.register(r'reservations', ReservationViewSet)
+router.register(r'orders', OrderViewSet)
 
 
 urlpatterns = [
