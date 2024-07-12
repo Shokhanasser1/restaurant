@@ -8,6 +8,7 @@ from django.db.models import Count
 @login_required
 def order_dish(request, dish_id):
     dish = get_object_or_404(Dish, id=dish_id)
+    order = None
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():

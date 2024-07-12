@@ -27,5 +27,10 @@ class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     dish = models.ForeignKey(Dish, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     order_date = models.DateField(auto_now_add=True)
     order_time = models.TimeField(auto_now_add=True)
+    
+    def save(self, *args, **kwargs):
+        self.total_price = self.dish.price * self.quantity
+        super().save(*args, **kwargs)

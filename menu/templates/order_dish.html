@@ -13,11 +13,18 @@ order page
 
 {% block content %}
 <div class="order-container">
-    <h1>Order {{ dish.name }}</h1>
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Order</button>
-    </form>
+  <h1>Order {{ dish.name }}</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>Total price: {{ order.total_price }}</p>
+    <button type="submit">Order</button>
+  </form>
+
+  {% if order %}
+  <p>Total Price: {{ order.total_price }}</p>
+  <p>Order Date: {{ order.order_date }}</p>
+  <p>Order Time: {{ order.order_time }}</p>
+  {% endif %}
 </div>
 {% endblock %}
