@@ -1,6 +1,6 @@
 from rest_framework import permissions, viewsets, generics
-from .serializers import ReservationSerializer, OrderSerializer
-from .models import Reservation, Order
+from .serializers import ReservationSerializer, OrderSerializer, DishSerializer
+from .models import Reservation, Order, Dish
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -18,3 +18,7 @@ class OrderViewSet(viewsets.ModelViewSet):
     serializer_class = OrderSerializer
     permission_classes = [permissions.AllowAny]
     
+class DishViewSet(viewsets.ModelViewSet):
+    queryset = Dish.objects.all()
+    serializer_class = DishSerializer
+    permission_classes = [permissions.AllowAny]
