@@ -10,8 +10,8 @@
     {% for dish in dishes %}
     <li>
         <img src="{{ dish.image.url }}" alt="{{ dish.name }}"> <br>
-        <a href="{% url 'dish_detail' dish.id %}">{{ dish.name }} </a> <b>--- {{ dish.price }} ---</b>
-        <a href="{% url 'dish_delete' dish.id%}">Delete dish</a>
+        <a href="{% url 'dish_detail' category_slug=dish.category.slug dish_slug=dish.slug %}">{{ dish.name }} </a> <b>--- {{ dish.price }} ---</b>
+        <a href="{% url 'dish_delete' dish.id %}">Delete dish</a>
     </li>
     {% endfor %}
 </ul>

@@ -152,7 +152,7 @@
     margin: 80px;
     margin-bottom: 160px;
     color: snow;
-    
+
     h3 {
       font-size: 28px;
       margin-bottom: 60px;
@@ -163,7 +163,6 @@
       color: snow;
       background-color: #349705;
     }
-
 
     .menu-card-1 {
       background: url("/static/images/menu-card-1.png");
@@ -208,26 +207,27 @@
   }
 
   .popular-sushi-meals {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    background-color: #333;
-    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .left {
+    .dish-card {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 50px;
 
-      div {
-        height: 250px;
-        margin: 5px;
-        background-color: lightgray;
+      img {
+        width: 100%;
       }
-    }
-    .right {
 
-
-      div {
-        margin: 5px;
-        height: 500px;
-        background-color: lightgray;
+      h1 {
+        margin: 20px;
+      }
+      .silver {
+        color: silver;
       }
     }
   }

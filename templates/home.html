@@ -44,19 +44,19 @@ Home page
         <h1>Explore our splendid menu</h1>
     </div>
     <div class="menu-cards">
-        <div  class="menu-card-1">
+        <div class="menu-card-1">
             <h3>First Category</h3>
             <a class="view-menu-btn" href="#">View menu</a>
         </div>
-        <div  class="menu-card-2">
+        <div class="menu-card-2">
             <h3>Second Category</h3>
             <a class="view-menu-btn" href="#">View menu</a>
         </div>
-        <div  class="menu-card-3">
+        <div class="menu-card-3">
             <h3>Third Category</h3>
             <a class="view-menu-btn" href="#">View menu</a>
         </div>
-        <div  class="menu-card-4">
+        <div class="menu-card-4">
             <h3>Fourth Category</h3>
             <a class="view-menu-btn" href="#">View menu</a>
         </div>
@@ -69,18 +69,16 @@ Home page
         </div>
         <h1>Most popular sushi meals</h1>
     </div>
-    <a href="{% url 'popular_dishes' %}">POPULAR</a>
     <div class="popular-sushi-meals">
-        <div class="left">
-            <div></div>
-            <div></div>
-        </div>
-        <div class="right">
-            <div></div>
-        </div>
+            {% for dish in top_dishes %}
+            <div class="dish-card">
+                <img src="{{ dish.image.url }}" alt="dish image">
+                <h1>{{ dish.name }}</h1>
+                <p class="silver">{{ dish.description }}</p>
+            </div>
+            {% endfor %}
+
     </div>
-
-
 
 
 

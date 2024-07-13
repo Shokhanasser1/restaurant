@@ -79,9 +79,11 @@ def add_dish(request):
         form = DishForm()
     return render(request, 'add_dish.html', {'form': form})
 
-def dish_detail(request, dish_id):
-    dish = get_object_or_404(Dish, id=dish_id)
+def dish_detail(request, category_slug, dish_slug):
+    dish = Dish.objects.get(category__slug=category_slug, slug=dish_slug)
     return render(request, 'dish_detail.html', {'dish': dish})
+
+
 
 @login_required
 def dish_delete(request, dish_id):
@@ -91,7 +93,9 @@ def dish_delete(request, dish_id):
 
 def home(request):
     form = ReservationForm(user=request.user if request.user.is_authenticated else None)
-    return render(request, 'home.html', {'form': form})
+    
+    top_dishes = Dish.get_top_three_dishes()
+    return render(request, 'home.html', {'form': form, 'top_dishes': top_dishes})
 
 def menu(request):
     dishes = Dish.objects.all()

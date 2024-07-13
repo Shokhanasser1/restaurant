@@ -82,6 +82,15 @@
             border: 1px solid #d2d2d2;
             border-radius: 5px;
         }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #d2d2d2;
+            
+
+        }
     }
     button {
         width: 100%;
@@ -143,7 +152,6 @@
             text-decoration: none;
             color: #349705;
         }
-
 
         .right {
             display: grid;

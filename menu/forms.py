@@ -24,7 +24,7 @@ class ReservationForm(forms.ModelForm):
 class DishForm(forms.ModelForm):
     class Meta:
         model = Dish
-        fields = ['name', 'price', 'image', 'description']
+        fields = ['name', 'price', 'image', 'description', 'category']
         
     def clean_image(self):
         image = self.cleaned_data.get('image')
