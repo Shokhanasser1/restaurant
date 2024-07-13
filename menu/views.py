@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import ReservationForm, DishForm, OrderForm
-from .models import Reservation, Dish, Order
+from .models import Reservation, Dish, Order, Category
 from django.db.models import Count
+
+
 
 @login_required
 def order_dish(request, dish_id):
@@ -79,9 +81,9 @@ def add_dish(request):
         form = DishForm()
     return render(request, 'add_dish.html', {'form': form})
 
-def dish_detail(request, category_slug, dish_slug):
-    dish = Dish.objects.get(category__slug=category_slug, slug=dish_slug)
-    return render(request, 'dish_detail.html', {'dish': dish})
+def dish_detail(request):
+    dishes = Dish.objects.all()
+    return render(request, 'dish_detail.html', {'dishes': dishes})
 
 
 
@@ -91,12 +93,28 @@ def dish_delete(request, dish_id):
     dish.delete()
     return redirect('menu')
 
+
+def get_top_dishes_for_all_categories():
+    categories = Category.objects.all()
+    category_dishes = {}
+    for category in categories:
+        top_dishes = Dish.objects.filter(category=category).annotate(order_count=Count('order')).order_by('-order_count')[:3]
+        category_dishes[category] = top_dishes
+    return category_dishes
+
+def top_dishes_view(request):
+    category_dishes = get_top_dishes_for_all_categories()
+    context = {
+        'category_dishes': category_dishes,
+    }
+    return render(request, 'top_dishes.html', context)
+
 def home(request):
     form = ReservationForm(user=request.user if request.user.is_authenticated else None)
-    
-    top_dishes = Dish.get_top_three_dishes()
-    return render(request, 'home.html', {'form': form, 'top_dishes': top_dishes})
 
+    return render(request, 'home.html', {'form': form})
+
+    
 def menu(request):
     dishes = Dish.objects.all()
     return render(request,'menu.html', {'dishes': dishes})

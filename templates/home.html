@@ -70,14 +70,7 @@ Home page
         <h1>Most popular sushi meals</h1>
     </div>
     <div class="popular-sushi-meals">
-            {% for dish in top_dishes %}
-            <div class="dish-card">
-                <img src="{{ dish.image.url }}" alt="dish image">
-                <h1>{{ dish.name }}</h1>
-                <p class="silver">{{ dish.description }}</p>
-            </div>
-            {% endfor %}
-
+<a href="{% url 'top_dishes' %}">Top CAAA</a>
     </div>
 
 
