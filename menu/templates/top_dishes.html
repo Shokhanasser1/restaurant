@@ -1,8 +1,13 @@
-{% for category, top_dishes in category_dishes.items %}
-  <h2>{{ category.name }}</h2>
-  <ul>
-    {% for dish in top_dishes %}
-      <li>{{ dish.name }} - {{ dish.order_count }} заказов</li>
-    {% endfor %}
-  </ul>
+{% if category_dishes %}
+{% for category, dishes in category_dishes.items %}
+    <h2>{{ category.name }}</h2>
+    <ul>
+        {% for dish in dishes %}
+            <li>{{ dish.name }} ({{ dish.order_count }} orders)</li>
+        {% endfor %}
+    </ul>
 {% endfor %}
+{% else %}
+<p>No dishes available.</p>
+{% endif %}
+

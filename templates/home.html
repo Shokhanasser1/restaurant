@@ -71,6 +71,7 @@ Home page
     </div>
     <div class="popular-sushi-meals">
 <a href="{% url 'top_dishes' %}">Top CAAA</a>
+{% include 'top_dishes.html' with category_dishes=top_dishes %}
     </div>
 
 
