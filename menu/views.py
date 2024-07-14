@@ -23,9 +23,6 @@ def order_dish(request, dish_id):
         form = OrderForm()
     return render(request, 'order_dish.html', {'dish': dish, 'form': form})
 
-def popular_dishes(request):
-    popular_dishes = Order.objects.values('dish__name').annotate(total_orders=Count('dish')).order_by('-total_orders')[:10]
-    return render(request, 'popular_dishes.html', {'popular_dishes': popular_dishes}) 
 
 @login_required
 def user_orders_list(request):
@@ -105,7 +102,7 @@ def get_top_dishes_for_all_categories():
     categories = Category.objects.all()
     category_dishes = {}
     for category in categories[:2]:
-        top_dishes = Dish.objects.filter(category=category).annotate(order_count=Count('order')).order_by('-order_count')[:2]
+        top_dishes = Dish.objects.filter(category=category).annotate(order_count=Count('order')).order_by('-order_count')[:3]
         category_dishes[category] = top_dishes
     return category_dishes
 
@@ -123,8 +120,9 @@ def home(request):
 
     
 def menu(request):
+    categories = Category.objects.all()
     dishes = Dish.objects.all()
-    return render(request,'menu.html', {'dishes': dishes})
+    return render(request,'menu.html', {'dishes': dishes, 'categories': categories})
 
 def main_menu(request):
     return render(request,'main menu.html')
