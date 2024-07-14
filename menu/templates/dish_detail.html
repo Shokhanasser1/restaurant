@@ -13,7 +13,7 @@ dish page
     <div class="links">
         <a href="{% url 'menu' %}">Back to menu</a>
         <a class="order"  href="{% url 'order_dish' dish.id%}">Order dish</a>
-        <a class="delete" href="{% url 'dish_delete' dish.id%}">Delete dish</a>
+        <a href="{% url 'dish_delete' dish_id=dish.id %}" onclick="return confirm('Do you want delete {{ dish.name }} dish?')" >Delete dish</a>
     </div>
     <div class="dish">
         <div class="left">

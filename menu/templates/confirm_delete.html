@@ -1,0 +1,6 @@
+<h1>Подтверждение удаления блюда "{{ dish.name }}"</h1>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" name="confirm_delete" value="Delete dish" onclick="return confirmDelete();">
+    <a href="{% url 'menu' %}">Cancel</a>
+</form>

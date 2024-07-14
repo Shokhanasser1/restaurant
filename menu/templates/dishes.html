@@ -11,7 +11,8 @@
     <li>
         <img src="{{ dish.image.url }}" alt="{{ dish.name }}"> <br>
         <a href="{% url 'dish_detail' dish.id %}">{{ dish.name }} </a> <b>--- {{ dish.price }} ---</b>
-        <a href="{% url 'dish_delete' dish.id %}">Delete dish</a>
+        <a href="{% url 'dish_delete' dish_id=dish.id %}" onclick="return confirm('Do you want delete {{ dish.name }} dish?')" >Delete dish</a>
+
     </li>
     {% endfor %}
 </ul>

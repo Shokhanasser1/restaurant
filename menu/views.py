@@ -89,8 +89,16 @@ def dish_detail(request, dish_id):
 @login_required
 def dish_delete(request, dish_id):
     dish = get_object_or_404(Dish, id=dish_id)
-    dish.delete()
-    return redirect('menu')
+    
+    if request.method == 'POST':
+        if 'confirm_delete' in request.POST:
+            dish.delete()
+            messages.success(request, 'Блюдо успешно удалено.')
+            return redirect('menu')
+        else:
+            return redirect('menu')  # Если пользователь отменил удаление, возвращаемся на страницу меню
+    
+    return render(request, 'confirm_delete.html', {'dish': dish})
 
 
 def get_top_dishes_for_all_categories():
