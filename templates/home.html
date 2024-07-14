@@ -70,9 +70,29 @@ Home page
         <h1>Most popular meals</h1>
     </div>
     <div class="popular-meals">
-{% include 'top_dishes.html' with category_dishes=top_dishes %}
+        {% include 'top_dishes.html' with category_dishes=top_dishes %}
     </div>
 
+
+<div class="content-reservation-container">
+    <div class="images">
+            <img class="front-image" src="/static/images/image for content-2.png" alt="front image">
+            <img class="back-image" src="/static/images/image for content-1.png" alt="back image">
+    </div>
+    <div class="content">
+        <div class="header-name-context-content">
+            <div class="restaurant-styling-name-float-left">
+                <hr>
+                <span>RESTAURANT</span>
+            </div>
+            <h1>Best place to find your food love</h1>
+        </div>
+        <p class="silver">
+            Aliquet egestas gravida orci nulla lacus suspendisse. Vel ullamcorper ultrices volutpat enim dignissim id purus. Urna quam massa urna dolor enim dui lectus id. Tristique dignissim pharetra feugiat mattis non. Vivamus libero feugiat odio eget potenti.
+        </p>
+        <a href="{% url 'home' %}">Make a reservation</a>
+    </div>
+</div>
 
 
 </div>

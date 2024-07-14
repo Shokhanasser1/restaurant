@@ -1,5 +1,7 @@
 {% for category, dishes in category_dishes.items %}
         <h1>Most popular {{ category.name }}{% if category.name == 'Sushi' %} meals{% else %}s{% endif %}</h1>
+        <p class="silver">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, natus dolore. Eligendi voluptas totam consequuntur molestias quis quidem saepe alias..</p> 
+
         <div class="dishes">
             {% for dish in dishes %}
                 <div class="dish-card">
@@ -14,6 +16,7 @@
                     </div>
                     <p class="silver">{{ dish.description }}</p>
                 </div>
-            {% endfor %}
-        </div>
+                {% endfor %}
+            </div>
+            <hr>
 {% endfor %}

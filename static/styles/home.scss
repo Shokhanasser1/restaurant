@@ -211,6 +211,19 @@
       color: #349705;
       margin: 20px;
     }
+    .silver {
+      color: #5e5e5e;
+      margin: 10px;
+    }
+    hr {
+      width: 60%;
+      height: 4px;
+      margin: 30px auto;
+      border: none;
+      background-color: rgb(200, 200, 200);
+      border-radius: 30px;
+      
+    }
 
     .dishes {
       display: flex;
@@ -237,20 +250,98 @@
           align-items: baseline;
           justify-content: space-between;
 
-
-
           h2 {
             float: left;
             color: #349705;
           }
           p {
             font-size: 18px;
-          } 
+          }
         }
         .silver {
           color: silver;
           margin: 20px 0;
         }
+      }
+    }
+  }
+  .content-reservation-container {
+    width: 80%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 800px 700px;
+    text-align: left;
+    position: relative;
+
+    .images {
+      
+      .front-image {
+        position: absolute;
+        top: 60px;
+        left: 268px;
+        width: 560px;
+        height: 540px;
+        z-index: 2;
+      }
+
+      .back-image {
+        position: absolute;
+        top: 120px;
+        left: 72px;
+        width: 516px;
+        height: 540px;
+        z-index: 1;
+      }
+    }
+
+
+    .content {
+      margin-top: 200px;
+      padding: 40px;
+      width: 80%;
+      margin: 100px 30px;
+      .header-name-context-content {
+        .restaurant-styling-name-float-left {
+          width: 200px;
+          max-height: 20px;
+          font-size: 20px;
+          color: #349705;
+          z-index: 1;
+          text-align: left;
+
+          span {
+            background-color: snow;
+            padding: 0 5px;
+          }
+
+          hr {
+            z-index: -1;
+            width: 100%;
+            top: 50%;
+            height: 3px;
+            position: absolute;
+            left: 0;
+            background-color: #349705;
+            border: none;
+          }
+        }
+        h1 {
+          margin: 20px 0;
+          font-size: 45px;
+        }
+      }
+      .silver {
+        color: #5e5e5e;
+        margin: 10px 0;
+        font-size: 16px;
+        margin: 50px 0;
+      }
+      a {
+        width: auto;
+        background-color: #349705;
+        color: snow;
+        padding: 10px 20px;
+        text-decoration: none;
       }
     }
   }
