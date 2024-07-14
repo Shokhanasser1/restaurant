@@ -206,28 +206,51 @@
     }
   }
 
-  .popular-sushi-meals {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .popular-meals {
+    h1 {
+      color: #349705;
+      margin: 20px;
+    }
 
-    .dish-card {
-      width: 300px;
+    .dishes {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 50px;
 
-      img {
-        width: 100%;
-      }
+      .dish-card {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px;
+        border: 1px solid #349705;
+        border-radius: 20px;
+        background-color: rgb(248, 248, 248);
 
-      h1 {
-        margin: 20px;
-      }
-      .silver {
-        color: silver;
+        img {
+          width: 100%;
+        }
+        .dish-content {
+          width: 65%;
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+
+
+
+          h2 {
+            float: left;
+            color: #349705;
+          }
+          p {
+            font-size: 18px;
+          } 
+        }
+        .silver {
+          color: silver;
+          margin: 20px 0;
+        }
       }
     }
   }

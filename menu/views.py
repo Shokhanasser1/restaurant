@@ -96,7 +96,7 @@ def dish_delete(request, dish_id):
             messages.success(request, 'Блюдо успешно удалено.')
             return redirect('menu')
         else:
-            return redirect('menu')  # Если пользователь отменил удаление, возвращаемся на страницу меню
+            return redirect('menu')
     
     return render(request, 'confirm_delete.html', {'dish': dish})
 
@@ -104,8 +104,8 @@ def dish_delete(request, dish_id):
 def get_top_dishes_for_all_categories():
     categories = Category.objects.all()
     category_dishes = {}
-    for category in categories:
-        top_dishes = Dish.objects.filter(category=category).annotate(order_count=Count('order')).order_by('-order_count')[:3]
+    for category in categories[:2]:
+        top_dishes = Dish.objects.filter(category=category).annotate(order_count=Count('order')).order_by('-order_count')[:2]
         category_dishes[category] = top_dishes
     return category_dishes
 

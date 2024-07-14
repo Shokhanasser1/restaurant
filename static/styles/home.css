@@ -194,25 +194,43 @@
   height: 420px;
   padding: 250px 0 0 0;
 }
-.home-container .popular-sushi-meals {
+.home-container .popular-meals h1 {
+  color: #349705;
+  margin: 20px;
+}
+.home-container .popular-meals .dishes {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.home-container .popular-sushi-meals .dish-card {
-  width: 300px;
+.home-container .popular-meals .dishes .dish-card {
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px;
+  margin: 30px;
+  border: 1px solid #349705;
+  border-radius: 20px;
+  background-color: rgb(248, 248, 248);
 }
-.home-container .popular-sushi-meals .dish-card img {
+.home-container .popular-meals .dishes .dish-card img {
   width: 100%;
 }
-.home-container .popular-sushi-meals .dish-card h1 {
-  margin: 20px;
+.home-container .popular-meals .dishes .dish-card .dish-content {
+  width: 65%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
-.home-container .popular-sushi-meals .dish-card .silver {
+.home-container .popular-meals .dishes .dish-card .dish-content h2 {
+  float: left;
+  color: #349705;
+}
+.home-container .popular-meals .dishes .dish-card .dish-content p {
+  font-size: 18px;
+}
+.home-container .popular-meals .dishes .dish-card .silver {
   color: silver;
+  margin: 20px 0;
 }/*# sourceMappingURL=home.css.map */
