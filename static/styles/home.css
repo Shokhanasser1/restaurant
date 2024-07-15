@@ -248,7 +248,8 @@
 }
 .home-container .content-reservation-container {
   width: 80%;
-  height: 100vh;
+  height: 800px;
+  margin: 30px auto;
   display: grid;
   grid-template-columns: 800px 700px;
   text-align: left;
@@ -314,4 +315,222 @@
   color: snow;
   padding: 10px 20px;
   text-decoration: none;
+}
+.home-container .grid-system-menu {
+  width: 85%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+}
+.home-container .grid-system-menu .menu-item {
+  height: 580px;
+}
+.home-container .grid-system-menu .menu-item .image-1 {
+  width: 100%;
+  height: 100%;
+  background: url("/static/images/image-1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.493);
+  padding: 60px;
+  text-align: left;
+}
+.home-container .grid-system-menu .menu-item .image-1 .header-name-context-content .restaurant-styling-name-grid {
+  padding-top: 300px;
+  width: 200px;
+  max-height: 20px;
+  position: relative;
+  font-size: 20px;
+  color: #349705;
+  z-index: 1;
+}
+.home-container .grid-system-menu .menu-item .image-1 .header-name-context-content .restaurant-styling-name-grid span {
+  background-color: transparent;
+  font-size: 16px;
+  padding: 0 5px;
+}
+.home-container .grid-system-menu .menu-item .image-1 .header-name-context-content .restaurant-styling-name-grid hr {
+  z-index: -1;
+  width: 30px;
+  top: 312px;
+  height: 3px;
+  position: absolute;
+  left: 112px;
+  background-color: #349705;
+  border: none;
+}
+.home-container .grid-system-menu .menu-item .image-1 .header-name-context-content h1 {
+  margin: 30px 0;
+  color: snow;
+  font-size: 28px;
+}
+.home-container .grid-system-menu .menu-item .image-1 .header-name-context-content a {
+  color: #349705;
+  text-decoration: none;
+  text-align: left;
+  border: 1px solid #349705;
+  background-color: transparent;
+  padding: 5px 15px;
+}
+.home-container .grid-system-menu .menu-item .image-2 {
+  height: 290px;
+  background: url("/static/images/image-2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.493);
+}
+.home-container .grid-system-menu .menu-item .image-3 {
+  height: 290px;
+  background-color: #000;
+}
+.home-container .grid-system-menu .menu-item .image-3 .restaurant-styling-name-grid {
+  width: 200px;
+  max-height: 20px;
+  font-size: 20px;
+  color: #349705;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 90px 0 auto;
+}
+.home-container .grid-system-menu .menu-item .image-3 .restaurant-styling-name-grid span {
+  font-size: 16px;
+  background-color: black;
+  padding: 0 5px;
+}
+.home-container .grid-system-menu .menu-item .image-3 .restaurant-styling-name-grid hr {
+  z-index: -1;
+  width: 80%;
+  top: 50%;
+  height: 3px;
+  position: absolute;
+  left: 20px;
+  background-color: #349705;
+  border: none;
+}
+.home-container .grid-system-menu .menu-item .image-3 h1 {
+  font-size: 25px;
+  color: snow;
+  margin: 16px;
+}
+.home-container .grid-system-menu .menu-item .image-3 a {
+  margin-top: 5px;
+  color: #349705;
+  text-decoration: none;
+  text-align: left;
+  border: 1px solid #349705;
+  background-color: transparent;
+  padding: 5px 15px;
+}
+.home-container .grid-system-menu .menu-item .image-4 {
+  height: 290px;
+  background-color: #000;
+}
+.home-container .grid-system-menu .menu-item .image-4 .restaurant-styling-name-grid {
+  width: 200px;
+  max-height: 20px;
+  font-size: 20px;
+  color: #349705;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 90px 0 auto;
+}
+.home-container .grid-system-menu .menu-item .image-4 .restaurant-styling-name-grid span {
+  font-size: 16px;
+  background-color: black;
+  padding: 0 5px;
+}
+.home-container .grid-system-menu .menu-item .image-4 .restaurant-styling-name-grid hr {
+  z-index: -1;
+  width: 80%;
+  top: 50%;
+  height: 3px;
+  position: absolute;
+  left: 20px;
+  background-color: #349705;
+  border: none;
+}
+.home-container .grid-system-menu .menu-item .image-4 h1 {
+  font-size: 25px;
+  color: snow;
+  margin: 16px;
+}
+.home-container .grid-system-menu .menu-item .image-4 a {
+  margin-top: 5px;
+  color: #349705;
+  text-decoration: none;
+  text-align: left;
+  border: 1px solid #349705;
+  background-color: transparent;
+  padding: 5px 15px;
+}
+.home-container .grid-system-menu .menu-item .image-5 {
+  height: 290px;
+  background: url("/static/images/image-5.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.493);
+}
+.home-container .grid-system-menu .menu-item .image-6 {
+  height: 100%;
+  background: url("/static/images/image-6.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.493);
+}
+.home-container .grid-system-menu .menu-item .image-6 .restaurant-styling-name-grid {
+  width: 200px;
+  max-height: 20px;
+  font-size: 20px;
+  color: #349705;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin: 400px 0 auto;
+}
+.home-container .grid-system-menu .menu-item .image-6 .restaurant-styling-name-grid span {
+  font-size: 16px;
+  background-color: transparent;
+  padding: 0 5px;
+}
+.home-container .grid-system-menu .menu-item .image-6 .restaurant-styling-name-grid .hr-1 {
+  width: 22px;
+  top: 50%;
+  height: 3px;
+  position: absolute;
+  left: 20px;
+  background-color: #349705;
+  border: none;
+}
+.home-container .grid-system-menu .menu-item .image-6 .restaurant-styling-name-grid .hr-2 {
+  width: 24px;
+  top: 50%;
+  height: 3px;
+  position: absolute;
+  right: 20px;
+  background-color: #349705;
+  border: none;
+}
+.home-container .grid-system-menu .menu-item .image-6 h1 {
+  font-size: 25px;
+  color: snow;
+  margin: 20px;
+}
+.home-container .grid-system-menu .menu-item .image-6 a {
+  margin-top: 5px;
+  color: #349705;
+  text-decoration: none;
+  text-align: left;
+  border: 1px solid #349705;
+  background-color: transparent;
+  padding: 5px 15px;
 }/*# sourceMappingURL=home.css.map */
