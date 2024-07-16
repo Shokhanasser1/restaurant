@@ -3,7 +3,7 @@
 {% block css %}
 <link rel="stylesheet" href="/static/styles/">
 {% endblock %}
-
+ 
 {% block title %}
 My orders page
 {% endblock %}
@@ -13,7 +13,7 @@ My orders page
     <h2>My Orders</h2>
     <ul>
         {% for order in orders %}
-          <li>{{ order.dish }} - Ordered {{ order.order_date }} at {{ order.order_time }} Price: {{ order.total_price }}</li>
+          <li>{{ order.dish }} - Ordered {{ order.order_date }} at {{ order.order_time }} Total Price: {{ order.total_price }}</li>
         {% endfor %}
       </ul>
 </div>

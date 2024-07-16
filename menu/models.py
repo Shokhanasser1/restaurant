@@ -24,10 +24,15 @@ class Dish(models.Model):
     image = models.ImageField(upload_to='dishes/')
     description = models.CharField(max_length=256, default='')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    
+    discount_percent = models.IntegerField(default=0, help_text="Процент скидки для блюда")
     def __str__(self):
         return self.name
     
+    def price_after_discount(self):
+        if self.discount_percent > 0:
+            discount_price = self.price - (self.price * self.discount_percent / 100)
+            return discount_price
+        return self.price
     
     
 class Order(models.Model):

@@ -141,7 +141,14 @@
   grid-template-columns: 1fr 1fr;
   margin: 0 40px;
 }
+.dish-detail-container .dish .right h3 {
+  font-size: 35px;
+  float: right;
+}
+.dish-detail-container .dish .right b {
+  color: red;
+}
 .dish-detail-container .dish .right h4 {
-  font-size: 30px;
+  font-size: 35px;
   float: right;
 }/*# sourceMappingURL=menu.css.map */

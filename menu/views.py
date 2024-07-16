@@ -17,11 +17,12 @@ def order_dish(request, dish_id):
             order = form.save(commit=False)
             order.dish = dish
             order.user = request.user
+            order.total_price = dish.price * order.quantity
             order.save()
             return redirect('menu')
     else:
         form = OrderForm()
-    return render(request, 'order_dish.html', {'dish': dish, 'form': form})
+    return render(request, 'order_dish.html', {'dish': dish, 'form': form, 'order': order})
 
 
 @login_required

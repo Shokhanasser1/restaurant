@@ -12,8 +12,9 @@ dish page
 <div class="dish-detail-container">
     <div class="links">
         <a href="{% url 'menu' %}">Back to menu</a>
-        <a class="order"  href="{% url 'order_dish' dish.id%}">Order dish</a>
-        <a href="{% url 'dish_delete' dish_id=dish.id %}" onclick="return confirm('Do you want delete {{ dish.name }} dish?')" >Delete dish</a>
+        <a class="order" href="{% url 'order_dish' dish.id%}">Order dish</a>
+        <a href="{% url 'dish_delete' dish_id=dish.id %}"
+            onclick="return confirm('Do you want delete {{ dish.name }} dish?')">Delete dish</a>
     </div>
     <div class="dish">
         <div class="left">
@@ -23,9 +24,15 @@ dish page
             <div class="header">
                 <h1>{{ dish.name }}</h2>
             </div>
+            {% if dish.discount_percent > 0 %}
+            <div class="price">
+                <h3>Price: <b>{{ dish.price_after_discount }}</b> </h3>
+            </div>
+            {% else %}
             <div class="price">
                 <h4>Price: {{ dish.price }}</h4>
             </div>
+            {% endif %}
             <p>
                 {{ dish.description }}
             </p>
