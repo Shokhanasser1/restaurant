@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Reservation, Order, Dish
+from .models import Reservation, Order, Dish, Category
 
 
 class ReservationSerializer(serializers.ModelSerializer):
@@ -20,3 +20,10 @@ class DishSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dish
         fields = ['url', 'name', 'price', 'image', 'description']
+        
+        
+class CategorySerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Category
+        fields = ['url', 'name']

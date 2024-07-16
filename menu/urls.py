@@ -9,7 +9,7 @@ router = routers.DefaultRouter()
 router.register(r'reservations', ReservationViewSet)
 router.register(r'orders', OrderViewSet)
 router.register(r'dishes', DishViewSet)
-
+router.register(r'categories', CategoryViewSet)
 
 urlpatterns = [
     path('create/', create_user, name='create_user'),

@@ -113,6 +113,20 @@ def top_dishes_view(request):
     }
     return render(request, 'top_dishes.html', context)
 
+def full_menu_view(request):
+    categories = Category.objects.all()
+    dishes = Dish.objects.all()
+    category_dishes = {}
+    for category in categories:
+        all_dishes = Dish.objects.filter(category=category)
+        category_dishes[category] = all_dishes
+    context = {
+        'dishes': dishes,
+        'categories': categories,
+        'category_dishes': category_dishes,
+    }
+    return render(request, 'full_menu.html', context)
+
 def home(request):
     form = ReservationForm(user=request.user if request.user.is_authenticated else None)
     top_dishes = get_top_dishes_for_all_categories()

@@ -74,79 +74,80 @@ Home page
     </div>
 
 
-<div class="content-reservation-container">
-    <div class="images">
+    <div class="content-reservation-container">
+        <div class="images">
             <img class="front-image" src="/static/images/image for content-2.png" alt="front image">
             <img class="back-image" src="/static/images/image for content-1.png" alt="back image">
-    </div>
-    <div class="content">
-        <div class="header-name-context-content">
-            <div class="restaurant-styling-name-float-left">
-                <hr>
-                <span>RESTAURANT</span>
-            </div>
-            <h1>Best place to find your food love</h1>
         </div>
-        <p class="silver">
-            Aliquet egestas gravida orci nulla lacus suspendisse. Vel ullamcorper ultrices volutpat enim dignissim id purus. Urna quam massa urna dolor enim dui lectus id. Tristique dignissim pharetra feugiat mattis non. Vivamus libero feugiat odio eget potenti.
-        </p>
-        <a href="{% url 'home' %}">Make a reservation</a>
-    </div>
-</div>
-
-<div class="grid-system-menu">
-    <div class="menu-item">
-        <div class="image-1">
+        <div class="content">
             <div class="header-name-context-content">
-                <div class="restaurant-styling-name-grid">
+                <div class="restaurant-styling-name-float-left">
                     <hr>
                     <span>RESTAURANT</span>
                 </div>
                 <h1>Best place to find your food love</h1>
-                <a href="#">Learn more</a>
             </div>
+            <p class="silver">
+                Aliquet egestas gravida orci nulla lacus suspendisse. Vel ullamcorper ultrices volutpat enim dignissim
+                id purus. Urna quam massa urna dolor enim dui lectus id. Tristique dignissim pharetra feugiat mattis
+                non. Vivamus libero feugiat odio eget potenti.
+            </p>
+            <a href="{% url 'home' %}">Make a reservation</a>
         </div>
     </div>
-    <div class="menu-item">
-        <div class="image-2"></div>
-        <div class="image-3">
-            <div class="header-name-context">
-                <div class="restaurant-styling-name-grid">
-                    <hr>
-                    <span>RESTAURANT</span>
-                </div>
-                <h1>Daily specials</h1>
-                <a href="#">Learn more</a>
-            </div>
-        </div>
-    </div>
-    <div class="menu-item">
-        <div class="image-4">
-            <div class="header-name-context">
-                <div class="restaurant-styling-name-grid">
-                    <hr>
-                    <span>RESTAURANT</span>
-                </div>
-                <h1>View Full Menu</h1>
-                <a href="#">Learn more</a>
-            </div>
-        </div>
-        <div class="image-5"></div>
-    </div>
-    <div class="menu-item">
-        <div class="image-6">
-            <div class="header-name-context">
-                <div class="restaurant-styling-name-grid">
-                    <hr class="hr-1">
-                    <span>RESTAURANT</span>
-                    <hr class="hr-2">
-                </div>
-                <h1>Wine list</h1>
-                <a href="#">Learn more</a>
-            </div>
-        </div>
-    </div>
-</div>
 
+    <div class="grid-system-menu">
+        <div class="menu-item">
+            <div class="image-1">
+                <div class="header-name-context-content">
+                    <div class="restaurant-styling-name-grid">
+                        <hr>
+                        <span>RESTAURANT</span>
+                    </div>
+                    <h1>Best place to find your food love</h1>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="image-2"></div>
+            <div class="image-3">
+                <div class="header-name-context">
+                    <div class="restaurant-styling-name-grid">
+                        <hr>
+                        <span>RESTAURANT</span>
+                    </div>
+                    <h1>Daily specials</h1>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <div class="image-4">
+                <div class="header-name-context">
+                    <div class="restaurant-styling-name-grid">
+                        <hr>
+                        <span>RESTAURANT</span>
+                    </div>
+                    <h1>View Full Menu</h1>
+                    <a href="{% url 'full_menu' %}">Learn more</a>
+                </div>
+            </div>
+            <div class="image-5"></div>
+        </div>
+        <div class="menu-item">
+            <div class="image-6">
+                <div class="header-name-context">
+                    <div class="restaurant-styling-name-grid">
+                        <hr class="hr-1">
+                        <span>RESTAURANT</span>
+                        <hr class="hr-2">
+                    </div>
+                    <h1>Wine list</h1>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
