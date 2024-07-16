@@ -23,6 +23,16 @@ class DishViewSet(viewsets.ModelViewSet):
     serializer_class = DishSerializer
     permission_classes = [permissions.AllowAny]
 
+class DishListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Dish.objects.all()
+    serializer_class = DishSerializer
+
+class DishRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Dish.objects.all()
+    serializer_class = DishSerializer
+
+
+
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer

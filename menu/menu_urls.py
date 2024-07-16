@@ -1,5 +1,6 @@
 from django.urls import path, include
 from . import views
+from .api_views import *
 
 urlpatterns = [
     path('', views.menu, name='menu'),
@@ -12,6 +13,7 @@ urlpatterns = [
     path('my_orders/', views.user_orders_list, name='my_order_list'),
     path('full_menu/', views.full_menu_view, name='full_menu'),
 
-
+    path('api-dishes/', DishListCreateAPIView.as_view(), name='api_dishes'),
+    path('api-dishes/<int:pk>/', DishRetrieveUpdateDestroyAPIView.as_view(), name='api_dish_detail'),
 ]
 
