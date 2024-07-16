@@ -15,5 +15,7 @@ urlpatterns = [
 
     path('api-dishes/', DishListCreateAPIView.as_view(), name='api_dishes'),
     path('api-dishes/<int:pk>/', DishRetrieveUpdateDestroyAPIView.as_view(), name='api_dish_detail'),
+    path('api-update-dish/<int:pk>/', DishRetrieveUpdateDestroyAPIView.as_view(), name='api-update-dish'),
+    path('api-delete-dish/<int:pk>/', DishView.as_view(), name='api-delete-dish'),
 ]
 

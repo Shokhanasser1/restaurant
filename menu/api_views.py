@@ -31,7 +31,35 @@ class DishRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Dish.objects.all()
     serializer_class = DishSerializer
 
+class DishView(APIView):
+    def get(self, request, pk=None):
+        context = {'request': request}
+        if pk:
+            dish = Dish.objects.get(pk=pk)
+            dish = DishSerializer(dish, context=context)
+            return Response(dish.data, status=status.HTTP_200_OK)
 
+    def post(self, request):
+        context = {'request': request}
+        data = DishSerializer(data=request.data, context=context)
+        
+        if data.is_valid():
+            data.save()
+            
+    def put(self, request, pk):
+        context = {'request': request}
+        dish = Dish.objects.get(id=pk)
+        data = DishSerializer(instance=dish, data=request.data, context=context)
+
+        if data.is_valid():
+            data.save()
+            return Response(data.data, status=status.HTTP_200_OK)
+        return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    def delete(self, request, pk):
+        dish = Dish.objects.get(id=pk)
+        dish.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
