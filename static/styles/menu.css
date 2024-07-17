@@ -41,6 +41,9 @@
   font-size: 18px;
   font-weight: bold;
 }
+.dishes-container ul li .discount-b {
+  color: red;
+}
 
 .form-container {
   width: 45%;
