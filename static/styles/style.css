@@ -127,11 +127,11 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-register-login a.active {
   color: #349705;
 }
-.navbar-register-login .menu {
+.navbar-register-login .navbar-burger {
   display: none;
   cursor: pointer;
 }
-.navbar-register-login .menu .nav-item {
+.navbar-register-login .navbar-burger .nav-item {
   padding: 10px;
 }
 .navbar-register-login .burger {
@@ -149,8 +149,9 @@ h1, h2, h3, h4, h5, h6 {
   .navbar-register-login .navbar-right {
     display: none;
   }
-  .navbar-register-login .menu.active {
+  .navbar-register-login .navbar-burger.active {
     position: absolute;
+    background-color: rgba(0, 0, 0, 0.507);
     right: 20px;
     top: 100px;
     display: block;

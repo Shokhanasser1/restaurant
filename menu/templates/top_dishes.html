@@ -7,7 +7,7 @@
                 <div class="dish-card">
                     <img src="{{ dish.image.url }}" alt="{{ dish.name }}">
                     <div class="dish-content">
-                        <h2>{{ dish.name }}</h2>
+                        <a href="{% url 'dish_detail' dish.id %}"><h2>{{ dish.name }}</h2></a>
                         <p>
                             ({{ dish.order_count }}
                             {% if dish.order_count == 1 %}order

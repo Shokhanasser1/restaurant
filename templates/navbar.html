@@ -37,7 +37,7 @@
             <a href="{% url 'logout' %}">Logout</a>
         </div>
     </div>
-    <div class="menu">
+    <div class="navbar-burger">
         {% if not request.user.is_authenticated %}
         <div class="nav-item">
             <a class="{% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a>
@@ -68,10 +68,19 @@
             <a class="{% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact us</a>
         </div>
         <div class="nav-item">
-            <a href="{% url 'profile' %}"><i class="fa fa-user"></i></a>
+            <a href="{% url 'profile' %}">Profile</a>            
         </div>
         <div class="nav-item">
-            <a href="{% url 'menu' %}"><i class="fa-solid fa-right-to-bracket" style="font-size: 25px;"></i></a>
+            <a href="{% url 'reservation_list' %}">My reservations</a>
+        </div>
+        <div class="nav-item">
+            <a href="{% url 'user_orders_list' %}">My orders</a>
+        </div>
+        <div class="nav-item">
+            <a href="{% url 'home' %}">Create reservation</a>
+        </div>
+        <div class="nav-item">
+            <a href="{% url 'logout' %}">Logout</a>
         </div>
         {% endif %}
     </div>

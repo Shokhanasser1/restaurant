@@ -6,7 +6,6 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from django.forms.models import model_to_dict
-from django.contrib.auth.models import User
 
 class ReservationViewSet(viewsets.ModelViewSet):
     queryset = Reservation.objects.all()

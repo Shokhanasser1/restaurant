@@ -20,7 +20,7 @@
             color: #349705;
         }
     }
-    .menu {
+    .navbar-burger {
         display: none;
         cursor: pointer;
 
@@ -74,8 +74,9 @@
             display: none;
         }
     
-        .menu.active {
+        .navbar-burger.active {
             position: absolute;
+            background-color: rgba(0, 0, 0, 0.508);
             right: 20px;
             top: 100px;
             display: block;

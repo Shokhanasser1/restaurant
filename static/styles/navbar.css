@@ -18,11 +18,11 @@
 .navbar a.active {
   color: #349705;
 }
-.navbar .menu {
+.navbar .navbar-burger {
   display: none;
   cursor: pointer;
 }
-.navbar .menu .nav-item {
+.navbar .navbar-burger .nav-item {
   padding: 10px;
 }
 .navbar .dropdown {
@@ -66,8 +66,9 @@
   .navbar .navbar-right {
     display: none;
   }
-  .navbar .menu.active {
+  .navbar .navbar-burger.active {
     position: absolute;
+    background-color: rgba(0, 0, 0, 0.508);
     right: 20px;
     top: 100px;
     display: block;

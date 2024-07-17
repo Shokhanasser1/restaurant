@@ -128,7 +128,7 @@ h1,h2,h3,h4,h5,h6 {
             color: #349705;
         }
     }
-    .menu {
+    .navbar-burger {
         display: none;
         cursor: pointer;
 
@@ -154,8 +154,9 @@ h1,h2,h3,h4,h5,h6 {
             display: none;
         }
     
-        .menu.active {
+        .navbar-burger.active {
             position: absolute;
+            background-color: rgba(0, 0, 0, 0.507);
             right: 20px;
             top: 100px;
             display: block;

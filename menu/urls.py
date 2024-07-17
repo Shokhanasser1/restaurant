@@ -3,6 +3,8 @@ from . import views
 from users.views import *
 from menu.api_views import *
 
+from users.api_views import ProfileViewSet
+
 from rest_framework import routers
 router = routers.DefaultRouter()
 
@@ -10,6 +12,8 @@ router.register(r'reservations', ReservationViewSet)
 router.register(r'orders', OrderViewSet)
 router.register(r'dishes', DishViewSet)
 router.register(r'categories', CategoryViewSet)
+
+router.register(r'profiles', ProfileViewSet)
 
 urlpatterns = [
     path('create/', create_user, name='create_user'),
