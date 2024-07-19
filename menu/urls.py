@@ -1,11 +1,11 @@
+from rest_framework.authtoken.views import obtain_auth_token
 from django.urls import path, include
 from . import views
 from users.views import *
 from menu.api_views import *
-
 from users.api_views import ProfileViewSet
-
 from rest_framework import routers
+
 router = routers.DefaultRouter()
 
 router.register(r'reservations', ReservationViewSet)
@@ -16,6 +16,12 @@ router.register(r'categories', CategoryViewSet)
 router.register(r'profiles', ProfileViewSet)
 
 urlpatterns = [
+    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
+    
+    
+    
     path('create/', create_user, name='create_user'),
     path("login/", login_view, name="login"),
     path("logout/", logout_view, name="logout"),
