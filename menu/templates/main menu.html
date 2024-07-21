@@ -1,13 +1,42 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block css %}
+<link rel="stylesheet" href="/static/styles/main_menu.css">
+{% endblock %}
 
 {% block title %}
 Main menu page
 {% endblock %}
 
-{% block header %}
-{% endblock %}
 
 {% block content %}
-Main content
+<div class="header-name-context">
+    <div class="restaurant-styling-name">
+        <hr>
+        <span>MENU</span>
+    </div>
+    <h1>Main menu</h1>
+    <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quidem distinctio doloribus non cupiditate nam labore deserunt dolore expedita laboriosam? Lorem  sed quas optio ipsa, eum nulla labore ab consequatur itaque expedita. Fugit, veniam error.</p>
+</div>
+{% for category, dishes in category_dishes.items %}
+<div class="category-containers">
+    <div class="category" style="background-image: url('{{ category.image.url }}')">
+        <h1>{{ category.name }}</h1>
+    </div>
+</div>
+<div class="dishes-container">
+    {% for dish in dishes %}
+    <div class="dish">
+        <h2>
+        <a href="{% url 'dish_detail' dish.id %}">
+            {{ dish.name }}
+        </a>
+        </h2>
+        <b>{{ dish.price }}</b>
+        <hr>
+        <p class="p">{{ dish.description }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
 {% endblock %}

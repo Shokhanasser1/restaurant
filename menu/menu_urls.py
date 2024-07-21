@@ -11,7 +11,6 @@ urlpatterns = [
     path('order/<int:dish_id>/', views.order_dish, name='order_dish'),
     path('top_dishes/', views.top_dishes_view, name='top_dishes'),
     path('my_orders/', views.user_orders_list, name='my_order_list'),
-    path('full_menu/', views.full_menu_view, name='full_menu'),
 
     path('api-dishes/', DishListCreateAPIView.as_view(), name='api_dishes'),
     path('api-dishes/<int:pk>/', DishRetrieveUpdateDestroyAPIView.as_view(), name='api_dish_detail'),

@@ -13,8 +13,8 @@ class Reservation(models.Model):
         return f"Reservation for {self.name} on {self.date} at {self.time}"
 
 class Category(models.Model):
-    name = models.CharField(max_length=100, default='')
-    
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='categories/', default='categories/default.jpg')
     def __str__(self):
         return self.name
     

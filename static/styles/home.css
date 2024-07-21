@@ -878,8 +878,8 @@
   /* -- External Social Link CSS Styles -- */
 }
 .home-container .content-reservation-container .content button a {
-  color: snow;
   text-decoration: none;
+  color: snow;
 }
 .home-container .content-reservation-container .content button .star-1 {
   position: absolute;
@@ -967,7 +967,7 @@
   filter: drop-shadow(0 0 10px #349705);
   z-index: 2;
 }
-.home-container .content-reservation-container .content button button:hover .star-3 {
+.home-container .content-reservation-container .content button:hover .star-3 {
   position: absolute;
   top: 55%;
   left: 25%;

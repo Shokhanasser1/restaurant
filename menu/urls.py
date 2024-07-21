@@ -37,6 +37,7 @@ urlpatterns = [
     path('my_orders/', views.user_orders_list, name='user_orders_list'),
     
     
+    
     path('menu/', include('menu.menu_urls')),
 
     path('about/', views.about, name='about'),

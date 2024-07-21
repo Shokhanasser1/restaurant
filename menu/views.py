@@ -114,7 +114,7 @@ def top_dishes_view(request):
     }
     return render(request, 'top_dishes.html', context)
 
-def full_menu_view(request):
+def main_menu(request):
     categories = Category.objects.all()
     dishes = Dish.objects.all()
     category_dishes = {}
@@ -126,7 +126,7 @@ def full_menu_view(request):
         'categories': categories,
         'category_dishes': category_dishes,
     }
-    return render(request, 'full_menu.html', context)
+    return render(request, 'main menu.html', context)
 
 def home(request):
     form = ReservationForm(user=request.user if request.user.is_authenticated else None)
@@ -139,8 +139,6 @@ def menu(request):
     dishes = Dish.objects.all()
     return render(request,'menu.html', {'dishes': dishes, 'categories': categories})
 
-def main_menu(request):
-    return render(request,'main menu.html')
 
 def about(request):
     return render(request,'about.html')
