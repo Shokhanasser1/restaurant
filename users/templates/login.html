@@ -27,7 +27,6 @@ login page
         {{ form.as_p }}
         <button type="submit">Войти</button>
         <a href="{% url 'create_user' %}">У вас нет аккаунта? Зарегистририруйтесь!</a>
-        <a href="{% provider_login_url 'facebook' %}">Войти через Facebook</a>
     </form>
 </div>
 {% endblock %}

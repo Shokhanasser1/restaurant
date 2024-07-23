@@ -39,6 +39,10 @@
                 {% include 'navbar.html' %}
             </div>
             <div class="{% if request.path == '/' %}no-header 
+                        {% elif request.path == '/create/' %}no-header
+                        {% elif request.path == '/login/' %}no-header
+                        {% elif request.path == '/profile/' %}no-header
+                        {% elif request.path == '/profile/edit/' %}no-header
             {% else %}pages-header
             {% endif %}">
                 <h1>

@@ -24,7 +24,6 @@ registration page
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Зарегистрироваться</button>
-        <a href="{% provider_login_url 'facebook' %}">Войти через Facebook</a>
         <a href="{% url 'login' %}">У вас уже есть аккаунт? Войдите!</a>
     </form>
 </div>
