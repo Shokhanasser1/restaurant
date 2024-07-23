@@ -21,6 +21,8 @@ else:
 ALLOWED_HOSTS = ["*"]
 
 
+GOOGLE_CLIENT_ID = ''
+
 # Application definition
 
 INSTALLED_APPS = [
