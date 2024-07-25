@@ -60,6 +60,17 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': GOOGLE_CLIENT_ID,
+            'secret': GOOGLE_SECRET_KEY,
+        }
+    },
+}
+
+
 # SOCIALACCOUNT_PROVIDERS = {
 #     'facebook': {
 #         'APP': {
@@ -106,7 +117,13 @@ MIDDLEWARE = [
 ]
 
 
+
+
+
+
 ROOT_URLCONF = 'restaurant.urls'
+
+
 
 TEMPLATES = [
     {
