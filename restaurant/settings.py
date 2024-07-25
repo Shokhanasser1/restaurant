@@ -44,10 +44,11 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     # 'allauth.socialaccount.providers.facebook',
 ]
 
-# SITE_ID = 1
+SITE_ID = 1
 
 
 AUTHENTICATION_BACKENDS = (
