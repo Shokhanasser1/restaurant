@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 import sys
-
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,7 +21,8 @@ else:
 ALLOWED_HOSTS = ["*"]
 #TEST
 
-GOOGLE_CLIENT_ID = ''
+GOOGLE_CLIENT_ID = config('GOOGLE_CLIENT_ID')
+GOOGLE_SECRET_KEY = config('GOOGLE_SECRET_KEY')
 
 # Application definition
 
