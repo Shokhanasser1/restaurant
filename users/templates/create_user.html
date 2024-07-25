@@ -25,6 +25,8 @@ registration page
         {{ form.as_p }}
         <button type="submit">Зарегистрироваться</button>
         <a href="{% url 'login' %}">У вас уже есть аккаунт? Войдите!</a>
+        <a href="{% provider_login_url 'google' %}">Зарегистрироваться через Google</a>
+
     </form>
 </div>
 

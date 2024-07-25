@@ -26,6 +26,11 @@ login page
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Войти</button>
+        <a>Войти с помощью...</a>
+        <a href="{% provider_login_url 'google' %}">
+            <span>
+                <i class="fa-brands fa-google"></i></a>
+            </span>
         <a href="{% url 'create_user' %}">У вас нет аккаунта? Зарегистририруйтесь!</a>
     </form>
 </div>
