@@ -19,7 +19,7 @@ else:
     DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
-
+#TEST
 
 GOOGLE_CLIENT_ID = ''
 
