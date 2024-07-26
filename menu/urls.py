@@ -46,4 +46,6 @@ urlpatterns = [
     
     path('apis/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    
+    path('protected/', views.protected_view, name='protected_view'),
 ]
