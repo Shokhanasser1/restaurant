@@ -70,40 +70,6 @@ SOCIALACCOUNT_PROVIDERS = {
     },
 }
 
-
-# SOCIALACCOUNT_PROVIDERS = {
-#     'facebook': {
-#         'APP': {
-#             'client_id': '382229461177188',
-#             'secret': 'c271a5bdd1b99be2a83322c365cce430'
-#         },
-#         'METHOD': 'oauth2',
-#         'SCOPE': ['email'],
-#         'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-#         'INIT_PARAMS': {'cookie': True},
-#         'FIELDS': [
-#             'id',
-#             'email',
-#             'name',
-#             'first_name',
-#             'last_name',
-#             'verified',
-#             'locale',
-#             'timezone',
-#             'link',
-#             'gender',
-#             'updated_time'
-#         ],
-#         'EXCHANGE_TOKEN': True,
-#         'LOCALE_FUNC': lambda request: 'ru_RU',
-#         'VERIFIED_EMAIL': False,
-#         'VERSION': 'v7.0',
-#     }
-# }
-
-
-
-
 MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
     'django.middleware.security.SecurityMiddleware',
