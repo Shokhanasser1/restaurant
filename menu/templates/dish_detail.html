@@ -17,8 +17,12 @@ dish page
         {% else %}
         <a class="order" href="{% url 'create_user' %}">To order dish you must be loggined!</a>
         {% endif %}
+        {% if request.user.is_staff %}
         <a href="{% url 'dish_delete' dish_id=dish.id %}"
             onclick="return confirm('Do you want delete {{ dish.name }} dish?')">Delete dish</a>
+            {% else %}
+        <a href=""></a>
+            {% endif %}
     </div>
     <div class="dish">
         <div class="left">

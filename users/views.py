@@ -14,8 +14,10 @@ def create_user(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
-
+            
+            user.backend = 'allauth.account.auth_backends.AuthenticationBackend'
             login(request, user)
+            
             messages.success(request, "Вы успешно зарегистрировались!")
             return redirect('/')
         else:
