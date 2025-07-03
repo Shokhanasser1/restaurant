@@ -20,7 +20,7 @@ if os.environ.get('RENDER'):
 # else:
 #     DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://restaurant-c0ck.onrender.com"]
 #TEST
 
 # GOOGLE_CLIENT_ID = config('GOOGLE_CLIENT_ID')
