@@ -15,10 +15,10 @@ SECRET_KEY = 'django-insecure-kh23o3s##^qb!@4%$l0ggetvc79=#o*hm0i7i$^7t285fkbrp+
 if os.environ.get('RENDER'):
     DEBUG = False
 # SECURITY WARNING: don't run with debug turned on in production!
-# if os.environ.get("LOCAL_ENVIROMENT") == "local_enviroment":
-#     DEBUG = True
-# else:
-#     DEBUG = False
+if os.environ.get("LOCAL_ENVIROMENT") == "local_enviroment":
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 #TEST
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     
     'menu',
@@ -74,6 +75,7 @@ LOGOUT_REDIRECT_URL = '/'
 # }
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'allauth.account.middleware.AccountMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -190,3 +192,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+if not DEBUG:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
