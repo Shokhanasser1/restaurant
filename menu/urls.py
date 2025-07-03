@@ -5,6 +5,10 @@ from users.views import *
 from menu.api_views import *
 from users.api_views import ProfileViewSet
 from rest_framework import routers
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 
 router = routers.DefaultRouter()
 
@@ -48,4 +52,4 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     
     path('protected/', views.protected_view, name='protected_view'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
