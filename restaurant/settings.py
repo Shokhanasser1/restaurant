@@ -12,11 +12,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-kh23o3s##^qb!@4%$l0ggetvc79=#o*hm0i7i$^7t285fkbrp+'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get("LOCAL_ENVIROMENT") == "local_enviroment":
-    DEBUG = True
-else:
+if os.environ.get('RENDER'):
     DEBUG = False
+# SECURITY WARNING: don't run with debug turned on in production!
+# if os.environ.get("LOCAL_ENVIROMENT") == "local_enviroment":
+#     DEBUG = True
+# else:
+#     DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 #TEST
@@ -175,7 +177,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 MEDIA_URL = '/media/'

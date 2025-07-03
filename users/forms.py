@@ -8,8 +8,8 @@ import re
 class RegisterForm(forms.Form):
     username = forms.CharField(label='Username', max_length=50, 
                             widget=forms.TextInput(attrs={'placeholder': 'Username'}))
-    first_name = forms.CharField(label='Last name', max_length=100,
-                            widget=forms.TextInput(attrs={'placeholder': 'Last name'}))
+    first_name = forms.CharField(label='First name', max_length=100,
+                            widget=forms.TextInput(attrs={'placeholder': 'First name'}))
     last_name = forms.CharField(label='Last name', max_length=100,
                             widget=forms.TextInput(attrs={'placeholder': 'Last name'}))
     email = forms.EmailField(label='Email', max_length=100,

@@ -11,8 +11,9 @@
     <li>
         <img src="{{ dish.image.url }}" alt="{{ dish.name }}"> <br>
         <a href="{% url 'dish_detail' dish.id %}">{{ dish.name }} </a> <b class="{% if dish.discount_percent > 0 %}discount-b{% else %}b{% endif %}">--- {{ dish.price_after_discount }} ---</b>
+    {% if request.user.is_staff %}
         <a href="{% url 'dish_delete' dish_id=dish.id %}" onclick="return confirm('Do you want delete {{ dish.name }} dish?')" >Delete dish</a>
-
+        {% endif %}
     </li>
     {% endfor %}
 </ul>
