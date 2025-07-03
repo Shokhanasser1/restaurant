@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/* Общие стили для контейнера формы */
+.dropdown {
+  border: none;
+  background-color: transparent;
+  color: snow;
+  padding: 10px;
+  cursor: pointer;
+}
+.dropdown:hover {
+  color: #349705;
+}
+
+.profile-menu {
+  display: none;
+}
+
+.profile-menu.active {
+  position: absolute;
+  top: 60px;
+  right: 50px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.501);
+}
+.profile-menu.active .profile-item {
+  padding: 10px;
+}
+.profile-menu.active .profile-item:hover {
+  background-color: rgba(0, 0, 0, 0.701);
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  /* Стили для заголовка "Регистрация" */
+  /* Стили для сообщений об ошибках */
+  /* Стили для формы */
+}
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+.form-container .form-container .alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.form-container .alert.error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+.form-container .alert.success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+.form-container form label {
+  margin-bottom: 8px;
+}
+.form-container form input[type=text],
+.form-container form input[type=email],
+.form-container form input[type=password] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.form-container form button[type=submit] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.form-container form button[type=submit]:hover {
+  background-color: #0056b3;
+}
+.form-container form a {
+  text-align: center;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+.form-container form a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=register_login.css.map */

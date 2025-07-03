@@ -1,0 +1,38 @@
+.reservations-container {
+    width: 85%;
+    margin: 50px auto;
+    height: 60vh;
+    h2 {
+        text-align: center;
+    }
+    ul {
+        list-style-type:decimal;
+        margin: 10px;
+        padding: 0;
+        font-family: "Fraunces", serif;
+        
+        li {
+            margin: 30px 0;
+            font-size: 20px;
+
+
+            b {
+                font-size: 23px;
+            }
+            a {
+                float: right;
+                text-decoration: none;
+                color: #349705;
+
+                &:hover {
+                    font-weight: bold;
+                }
+
+            }
+
+            &::before {
+                color: #349705;
+            }
+        }
+    }
+}
